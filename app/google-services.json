@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1062997689462",
+    "firebase_url": "https://enovschool.firebaseio.com",
+    "project_id": "enovschool",
+    "storage_bucket": "enovschool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062997689462:android:e7a01a1bd684bf99254b57",
+        "android_client_info": {
+          "package_name": "com.devmobile.ecoleenligne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062997689462-sd9f9o5qaq9lderul1fnarkbajfnd0b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc-VvR5SU2oVoC9yHr9uKo_NBuUDI8nog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062997689462-sd9f9o5qaq9lderul1fnarkbajfnd0b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
