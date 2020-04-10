@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComencerActivity"
+    android:background="@drawable/img_comencer1">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="342dp"
+        android:layout_height="286dp"
+        android:layout_gravity="center"
+        android:background="@drawable/img_comencer2"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="55dp">
+    </androidx.appcompat.widget.AppCompatImageView>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="342dp"
+        android:layout_height="286dp"
+        android:layout_gravity="center"
+        android:background="@drawable/img_comencer3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123"
+        tools:ignore="MissingConstraints"></androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:text="Aller on démarre..."
+        android:textStyle="bold"
+
+        android:textSize="27dp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="361dp"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+    <TextView
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:text="Commencons par vous s'inscrire, si cela est déjà fait connectez vous !"
+
+        android:textSize="15dp"
+        android:textStyle="normal"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="411dp"
+        tools:ignore="MissingConstraints">
+    </TextView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_comencer4"
+        tools:layout_editor_absoluteX="196dp"
+        tools:layout_editor_absoluteY="496dp"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <Button
+        android:id="@+id/bt_inscription"
+        android:layout_width="271dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/identificationbutton"
+        android:text="S'inscrire"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.917" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="273dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/commencerbutton"
+        android:text="S'identifier"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ public class BienvenueActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signup=new Intent(BienvenueActivity.this,inscription.class);
+                Intent signup=new Intent(BienvenueActivity.this,ComencerActivity.class);
                 startActivity(signup);
             }
         });
