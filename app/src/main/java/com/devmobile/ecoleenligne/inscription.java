@@ -3,6 +3,7 @@ package com.devmobile.ecoleenligne;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -56,7 +57,8 @@ public class inscription extends AppCompatActivity {
                                      @Override
                                      public void onComplete(@NonNull Task<Void> task) {
                                          if (task.isSuccessful()) {
-                                             Toast.makeText(inscription.this,"Utilisateur ajouté veuillez vérifier votre mail",Toast.LENGTH_SHORT).show();
+                                             Intent success = new Intent(inscription.this, checkEmail.class);
+                                             startActivity(success);
                                          }
                                          else {
                                              Toast.makeText(inscription.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();

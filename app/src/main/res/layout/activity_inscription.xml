@@ -65,16 +65,15 @@
             tools:layout_editor_absoluteY="505dp"></Spinner>
 
         <EditText
-            android:id="@+id/signup_prenom"
+            android:id="@+id/signup_nom"
             android:layout_width="282dp"
             android:layout_height="39dp"
-            android:layout_below="@+id/signup_nom"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="220dp"
             android:layout_marginLeft="65dp"
             android:background="@drawable/round_edit_signup"
             android:fontFamily="@font/calibri_regular"
-            android:hint="Prénom"
+            android:hint="Nom"
             android:paddingLeft="30dp"
             android:textColor="@android:color/black"
             android:textSize="18dp"
@@ -96,6 +95,7 @@
             android:paddingLeft="30dp"
             android:textColor="@android:color/black"
             android:textSize="18dp"
+            android:inputType="textEmailAddress"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="64dp"
             tools:layout_editor_absoluteY="331dp"></EditText>
@@ -114,6 +114,7 @@
             android:paddingLeft="30dp"
             android:textColor="@android:color/black"
             android:textSize="18dp"
+            android:inputType="textPassword"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="64dp"
             tools:layout_editor_absoluteY="385dp"></EditText>
@@ -132,20 +133,22 @@
             android:paddingLeft="30dp"
             android:textColor="@android:color/black"
             android:textSize="18dp"
+            android:inputType="textPassword"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="64dp"
             tools:layout_editor_absoluteY="445dp"></EditText>
 
         <EditText
-            android:id="@+id/signup_nom"
+            android:id="@+id/signup_prenom"
             android:layout_width="282dp"
             android:layout_height="39dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="65dp"
             android:layout_gravity="center"
+            android:layout_below="@+id/signup_nom"
             android:background="@drawable/round_edit_signup"
             android:fontFamily="@font/calibri_regular"
-            android:hint="Nom"
+            android:hint="Prenom"
             android:paddingLeft="30dp"
             android:textColor="@android:color/black"
             android:textSize="18dp"
@@ -154,21 +157,21 @@
             tools:layout_editor_absoluteY="218dp"></EditText>
 
     </RelativeLayout>
+
     <Button
         android:id="@+id/signup_suivant"
-        android:layout_width="282dp"
-        android:layout_height="39dp"
-        android:layout_gravity="center"
-        android:text="Suivant"
+        android:layout_width="273dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
         android:textColor="@android:color/white"
+        android:background="@drawable/suivantbutton"
+        android:text="Suivant"
         android:textAllCaps="false"
-        android:layout_marginTop="60dp"
-        android:background="#4F58D7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.875" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

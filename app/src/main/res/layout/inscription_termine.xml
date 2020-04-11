@@ -85,21 +85,22 @@
         app:layout_constraintVertical_bias="0.649"
         tools:ignore="MissingConstraints"></ImageView>
 
+
     <Button
         android:id="@+id/bt_verifierEmail"
-        android:layout_width="282dp"
-        android:layout_height="39dp"
-        android:layout_gravity="center"
-        android:text="Vérifiez l'émail !"
+        android:layout_width="273dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
         android:textColor="@android:color/white"
+        android:background="@drawable/suivantbutton"
+        android:text="Vérifiez l'émail !"
         android:textAllCaps="false"
-        android:layout_marginTop="60dp"
-        android:background="#4F58D7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.875" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
