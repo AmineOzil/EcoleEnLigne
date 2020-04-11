@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ComencerActivity extends AppCompatActivity {
+public class CommencerActivity extends AppCompatActivity {
     Button authentification;
     Button inscription;
     @Override
@@ -19,14 +19,14 @@ public class ComencerActivity extends AppCompatActivity {
         authentification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(ComencerActivity.this,login.class);
+                Intent login = new Intent(CommencerActivity.this,login.class);
                 startActivity(login);
             }
         });
         inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(ComencerActivity.this,inscription.class);
+                Intent login = new Intent(CommencerActivity.this,ProfileActivity.class);
                 startActivity(login);
             }
         });

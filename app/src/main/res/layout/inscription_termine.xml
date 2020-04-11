@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@drawable/img_comencer1">
+
+    <ImageView
+        android:id="@+id/img_homme"
+        android:layout_width="161dp"
+        android:layout_height="246dp"
+        android:layout_gravity="center"
+        android:background="@drawable/homme_termine"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.587"
+        tools:ignore="MissingConstraints"></ImageView>
+
+    <TextView
+        android:id="@+id/tv_inscription"
+        android:layout_width="164dp"
+        android:layout_height="41dp"
+        android:text="Inscription"
+        android:textColor="@color/commencer"
+        android:textSize="31dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <ImageView
+        android:id="@+id/img_etape3"
+        android:layout_width="238dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:background="@drawable/etape_termine"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166"
+        tools:ignore="MissingConstraints"></ImageView>
+
+
+    <TextView
+        android:id="@+id/tv_etape3"
+        android:layout_width="194dp"
+        android:layout_height="40dp"
+        android:text="Félicitations!"
+        android:textColor="@color/commencer"
+        android:textSize="33dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <ImageView
+        android:id="@+id/img_bg_termine"
+        android:layout_width="417dp"
+        android:layout_height="275dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_termine"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649"
+        tools:ignore="MissingConstraints"></ImageView>
+
+    <Button
+        android:id="@+id/bt_verifierEmail"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:text="Vérifiez l'émail !"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:layout_marginTop="60dp"
+        android:background="#4F58D7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.917" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

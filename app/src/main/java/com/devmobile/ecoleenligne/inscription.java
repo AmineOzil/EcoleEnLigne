@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +22,7 @@ public class inscription extends AppCompatActivity {
     EditText email,password;
     FirebaseAuth auth;
     FirebaseUser user;
+    Spinner niveaux;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,16 @@ public class inscription extends AppCompatActivity {
         suivant = findViewById(R.id.signup_suivant);
         email = findViewById(R.id.signup_mail);
         password = findViewById(R.id.signup_mdp);
+        niveaux = findViewById(R.id.spinner_niveaux);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                R.layout.niveaux_spinner,
+                getResources().getStringArray(R.array.niveaux)
+        );
+        adapter.setDropDownViewResource(R.layout.niveaux_etudes);
+        niveaux.setAdapter(adapter);
+
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

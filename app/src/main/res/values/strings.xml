@@ -9,4 +9,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string-array name="niveaux">
+        <item>Primaire</item>
+        <item>Seconde</item>
+        <item>Terminal L</item>
+        <item>Terminal S</item>
+    </string-array>
 </resources>
