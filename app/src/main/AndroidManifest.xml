@@ -12,9 +12,10 @@
         <activity android:name=".inscription"></activity>
         <activity android:name=".login" />
         <activity android:name=".CommencerActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".PreinscriptionActivity" />
         <activity android:name=".checkEmail" />
         <activity android:name=".dashboard" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".BienvenueActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

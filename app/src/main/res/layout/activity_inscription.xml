@@ -1,177 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".inscription"
-    android:background="@drawable/img_comencer1">
-
+    android:orientation="vertical"
+    android:background="@android:color/white">
     <TextView
-        android:id="@+id/tv_inscription"
-        android:layout_width="164dp"
-        android:layout_height="41dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
         android:text="Inscription"
-        android:textColor="@color/commencer"
+        android:textColor="@android:color/black"
         android:textSize="31dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072"
-        tools:ignore="MissingConstraints"></TextView>
-
+        android:fontFamily="@font/calibri_bold"
+        android:layout_marginTop="30dp"></TextView>
     <ImageView
-        android:id="@+id/img_etape2"
-        android:layout_width="238dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:background="@drawable/etape2"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166"
-        tools:ignore="MissingConstraints"></ImageView>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-        <Spinner
-            android:id="@+id/spinner_niveaux"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_below="@+id/signup_confirmmdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round_edit_signup"
-            android:entries="@array/niveaux"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Niveau d'études"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="505dp"></Spinner>
-
-        <EditText
-            android:id="@+id/signup_nom"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="220dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round_edit_signup"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Nom"
-            android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="273dp"></EditText>
-
-        <EditText
-            android:id="@+id/signup_mail"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_below="@+id/signup_prenom"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round_edit_signup"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Email"
-            android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:inputType="textEmailAddress"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="331dp"></EditText>
-
-        <EditText
-            android:id="@+id/signup_mdp"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_below="@+id/signup_mail"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round_edit_signup"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Mot de pass"
-            android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:inputType="textPassword"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="385dp"></EditText>
-
-        <EditText
-            android:id="@+id/signup_confirmmdp"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_below="@+id/signup_mdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round_edit_signup"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Confirmer mot de pass"
-            android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:inputType="textPassword"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="445dp"></EditText>
-
-        <EditText
-            android:id="@+id/signup_prenom"
-            android:layout_width="282dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="65dp"
-            android:layout_gravity="center"
-            android:layout_below="@+id/signup_nom"
-            android:background="@drawable/round_edit_signup"
-            android:fontFamily="@font/calibri_regular"
-            android:hint="Prenom"
-            android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="218dp"></EditText>
-
-    </RelativeLayout>
+        android:layout_marginBottom="70dp"></ImageView>
+    <EditText
+        android:id="@+id/signup_nom"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:background="@drawable/round_edit_signup"
+        android:layout_gravity="center"
+        android:hint="Nom"
+        android:paddingLeft="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"></EditText>
+    <EditText
+        android:id="@+id/signup_prenom"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:background="@drawable/round_edit_signup"
+        android:layout_gravity="center"
+        android:hint="Prénom"
+        android:paddingLeft="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"></EditText>
+    <EditText
+        android:id="@+id/signup_mail"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:background="@drawable/round_edit_signup"
+        android:layout_gravity="center"
+        android:hint="Email"
+        android:paddingLeft="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"></EditText>
+    <EditText
+        android:id="@+id/signup_mdp"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:background="@drawable/round_edit_signup"
+        android:layout_gravity="center"
+        android:hint="Mot de pass"
+        android:paddingLeft="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"></EditText>
+    <EditText
+        android:id="@+id/signup_confirmmdp"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:background="@drawable/round_edit_signup"
+        android:layout_gravity="center"
+        android:hint="Confirmer mot de pass"
+        android:paddingLeft="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"></EditText>
+    <Spinner
+        android:id="@+id/spinner_niveaux"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_edit_signup"
+        android:entries="@array/niveaux"
+        android:fontFamily="@font/calibri_regular"
+        android:hint="Niveau d'études"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+></Spinner>
 
     <Button
         android:id="@+id/signup_suivant"
         android:layout_width="273dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:background="@drawable/suivantbutton"
         android:text="Suivant"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        android:textColor="@android:color/white"></Button>
+</LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>

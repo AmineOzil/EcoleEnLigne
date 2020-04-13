@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#EC008C</color>
     <color name="colorAccent">#D81B60</color>
     <color name="login">#FFF8E1</color>
+    <color name="profile">#4bb6ef</color>
     <color name="commencer">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="profile_info">#BFC0C0</color>
+
 </resources>

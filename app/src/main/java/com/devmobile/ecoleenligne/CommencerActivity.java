@@ -26,7 +26,7 @@ public class CommencerActivity extends AppCompatActivity {
         inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(CommencerActivity.this,ProfileActivity.class);
+                Intent login = new Intent(CommencerActivity.this, PreinscriptionActivity.class);
                 startActivity(login);
             }
         });
