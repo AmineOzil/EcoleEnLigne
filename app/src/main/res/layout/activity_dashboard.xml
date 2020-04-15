@@ -4,12 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="#FFFBFB"
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/dashboard"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_above="@id/bottom_nav">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -17,7 +21,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:paddingRight="15dp"
+           >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -358,7 +363,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottom_nav"
         app:mbn_circleColor="#ffffff"
-        app:mbn_backgroundBottomColor="#ffffff"
+        app:mbn_backgroundBottomColor="#FFFBFB"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_countTextColor="#ffffff"
         app:mbn_defaultIconColor="#8890A6"

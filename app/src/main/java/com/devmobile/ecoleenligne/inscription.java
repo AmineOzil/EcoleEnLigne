@@ -46,7 +46,10 @@ public class inscription extends AppCompatActivity {
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(email.getText().toString().matches("") || password.getText().toString().matches("")){
+                    Toast.makeText(inscription.this, "Veuillez entrer votre email et mot de passe svp", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 auth.createUserWithEmailAndPassword(email.getText().toString().trim(),password.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                  @Override
                  public void onComplete(@NonNull Task<AuthResult> task) {

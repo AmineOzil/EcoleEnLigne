@@ -16,15 +16,16 @@ public class dashboard extends AppCompatActivity {
     ImageView img_profile;
     ImageView img_profile2;
     MeowBottomNavigation meo;
-    private int home=1;
-    private int profile=2;
-    private int online=3;
+    private int exams=1;
+    private int home=2;
+    private int forum=3;
+    private int profile=4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         img_profile= findViewById(R.id.img_profile);
-       /* img_profile2 = findViewById(R.id.img_profile2);
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +33,7 @@ public class dashboard extends AppCompatActivity {
                 startActivity(profile);
             }
         });
-        img_profile2.setOnClickListener(new View.OnClickListener() {
+        /*img_profile2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent profile2 = new Intent(dashboard.this, ProfileActivity.class);
@@ -41,13 +42,19 @@ public class dashboard extends AppCompatActivity {
         });*/
         meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
-        meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_exams));
-        meo.add(new MeowBottomNavigation.Model(online, R.drawable.ic_home));
-        meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_online_courses));
+        meo.add(new MeowBottomNavigation.Model(exams, R.drawable.ic_exams));
+        meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_home));
+        meo.add(new MeowBottomNavigation.Model(forum, R.drawable.ic_forum));
+        meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_user));
         meo.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(dashboard.this,""+item.getId(),Toast.LENGTH_LONG).show();
+                if (item.getId()==profile){
+                    Intent profile2 = new Intent(dashboard.this, ProfileActivity.class);
+                    startActivity(profile2);
+                }
+                else
+                Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
             }
         });
         meo.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -63,5 +70,6 @@ public class dashboard extends AppCompatActivity {
                 // your codes
             }
         });
+        meo.show(home,true);
     }
 }
