@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "533673959811",
-    "firebase_url": "https://ecoleenligne-16f91.firebaseio.com",
-    "project_id": "ecoleenligne-16f91",
-    "storage_bucket": "ecoleenligne-16f91.appspot.com"
+    "project_number": "1062997689462",
+    "firebase_url": "https://enovschool.firebaseio.com",
+    "project_id": "enovschool",
+    "storage_bucket": "enovschool.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:533673959811:android:eff32f77f276d3c96416b6",
+        "mobilesdk_app_id": "1:1062997689462:android:e7a01a1bd684bf99254b57",
         "android_client_info": {
           "package_name": "com.devmobile.ecoleenligne"
         }
       },
       "oauth_client": [
         {
-          "client_id": "533673959811-79uf5feo9aq3vh4ib411fod5rnuptao0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.devmobile.ecoleenligne",
-            "certificate_hash": "3517ee5eea4b8867be8a1b966dbe120d81600761"
-          }
-        },
-        {
-          "client_id": "533673959811-ve8p7amfk1a8vr5f9ra7adjpmn25cd8h.apps.googleusercontent.com",
+          "client_id": "1062997689462-sd9f9o5qaq9lderul1fnarkbajfnd0b7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCsG6xVBZAowgT5LHO7dsPeiMwDiBISbfo"
+          "current_key": "AIzaSyDc-VvR5SU2oVoC9yHr9uKo_NBuUDI8nog"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "533673959811-ve8p7amfk1a8vr5f9ra7adjpmn25cd8h.apps.googleusercontent.com",
+              "client_id": "1062997689462-sd9f9o5qaq9lderul1fnarkbajfnd0b7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
