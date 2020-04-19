@@ -1,13 +1,13 @@
 package com.devmobile.ecoleenligne;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
@@ -15,31 +15,29 @@ public class dashboard extends AppCompatActivity {
 
     ImageView img_profile;
     ImageView img_profile2;
+    private static int selectionné =2;
     MeowBottomNavigation meo;
-    private int exams=1;
-    private int home=2;
-    private int forum=3;
-    private int profile=4;
+    final private int exams=1;
+    final private int home=2;
+    final private int forum=3;
+    final private int profile=4;
+    Fragment contenu=new DashboardFragment();
+    RelativeLayout fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        img_profile= findViewById(R.id.img_profile);
+        fm=findViewById(R.id.dashboard);
+      /*  img_profile= findViewById(R.id.img_profile);
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent profile = new Intent(dashboard.this,ProfileActivity.class);
                 startActivity(profile);
             }
-        });
-        /*img_profile2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent profile2 = new Intent(dashboard.this, ProfileActivity.class);
-                startActivity(profile2);
-            }
-        });*/
+        })*/
+
         meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
         meo.add(new MeowBottomNavigation.Model(exams, R.drawable.ic_exams));
@@ -49,12 +47,7 @@ public class dashboard extends AppCompatActivity {
         meo.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                if (item.getId()==profile){
-                    Intent profile2 = new Intent(dashboard.this, ProfileActivity.class);
-                    startActivity(profile2);
-                }
-                else
-                Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
+               setContenu(item.getId());
             }
         });
         meo.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -70,6 +63,22 @@ public class dashboard extends AppCompatActivity {
                 // your codes
             }
         });
-        meo.show(home,true);
+        meo.show(selectionné,true);
+        setContenu(selectionné);
+    }
+    public void setContenu(int id){
+        switch (id){
+            case profile: contenu = new ProfileActivity();
+                selectionné =profile;
+                fm.setBackgroundResource(R.drawable.dashboard_bg2);
+                break;
+            case home:    contenu= new DashboardFragment();
+                selectionné =home;
+                fm.setBackgroundResource(R.drawable.dashboard);
+                break;
+            default:      Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
+                break;
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenu,contenu).commit();
     }
 }
