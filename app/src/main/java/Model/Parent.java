@@ -5,7 +5,7 @@ public class Parent extends Utilisateur {
     private String email;
 
     public Parent(int id, String nom, String prénom, String identifiant, String mot_de_passe,int number_fils,String email) {
-        super(id, nom, prénom, identifiant, mot_de_passe);
+        super(nom, prénom, identifiant, mot_de_passe);
         this.number_fils=number_fils;
         this.email=email;
     }

@@ -19,34 +19,29 @@ public class PreinscriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preinscription);
-        suivant = findViewById(R.id.bt_suivant_etape1);
+
         eleve = findViewById(R.id.img_eleve);
         enseignant = findViewById(R.id.img_enseignant);
         parent = findViewById(R.id.img_parent);
 
-        suivant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent login = new Intent(PreinscriptionActivity.this,inscription.class);
-                startActivity(login);
-            }
-        });
+
         eleve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Vous avez choisi le profile : Elève !",Toast.LENGTH_LONG).show();
+                Intent inscription = new Intent(PreinscriptionActivity.this,inscription.class);
+                inscription.putExtra("Elève",1);
+                startActivity(inscription);
             }
         });
-        enseignant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Vous avez choisi le profile : Enseignant !",Toast.LENGTH_LONG).show();
-            }
-        });
+
         parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Vous avez choisi le profile : Parent !",Toast.LENGTH_LONG).show();
+                Intent inscription = new Intent(PreinscriptionActivity.this,inscription.class);
+                inscription.putExtra("Parent",2);
+                startActivity(inscription);
             }
         });
     }

@@ -47,6 +47,7 @@
                 android:layout_height="150dp"
                 android:src="@drawable/img_profile"/>
             <TextView
+                android:id="@+id/tvProfile"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

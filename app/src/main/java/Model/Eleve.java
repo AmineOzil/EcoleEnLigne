@@ -4,10 +4,10 @@ public class Eleve extends Utilisateur {
     private int id_niveau;
     private String email;
 
-    public Eleve(int id, String nom, String prénom, String identifiant, String mot_de_passe,int id_niveau,String email) {
-        super(id, nom, prénom, identifiant, mot_de_passe);
+    public Eleve(String nom, String prénom, String identifiant, String mot_de_passe,int id_niveau) {
+        super(nom, prénom, identifiant, mot_de_passe);
         this.id_niveau=id_niveau;
-        this.email=email;
+
     }
 
     public int getId_niveau() {

@@ -1,14 +1,16 @@
 package Model;
 
 public class Utilisateur {
+
+    private static int count = 0;
     private int id;
     public String nom;
     private String prénom;
     private String identifiant;
     private String mot_de_passe;
 
-    public Utilisateur(int id,String nom,String prénom,String identifiant,String mot_de_passe){
-        this.id=id;
+    public Utilisateur(String nom,String prénom,String identifiant,String mot_de_passe){
+        this.id=++count;
         this.nom=nom;
         this.prénom=prénom;
         this.identifiant=identifiant;
