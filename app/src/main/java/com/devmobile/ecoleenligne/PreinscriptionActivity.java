@@ -21,7 +21,6 @@ public class PreinscriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_preinscription);
 
         eleve = findViewById(R.id.img_eleve);
-        enseignant = findViewById(R.id.img_enseignant);
         parent = findViewById(R.id.img_parent);
 
 
@@ -30,7 +29,7 @@ public class PreinscriptionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Vous avez choisi le profile : Elève !",Toast.LENGTH_LONG).show();
                 Intent inscription = new Intent(PreinscriptionActivity.this,inscription.class);
-                inscription.putExtra("Elève",1);
+                inscription.putExtra("type","Elève");
                 startActivity(inscription);
             }
         });
@@ -40,7 +39,7 @@ public class PreinscriptionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Vous avez choisi le profile : Parent !",Toast.LENGTH_LONG).show();
                 Intent inscription = new Intent(PreinscriptionActivity.this,inscription.class);
-                inscription.putExtra("Parent",2);
+                inscription.putExtra("type","Parent");
                 startActivity(inscription);
             }
         });

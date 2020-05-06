@@ -1,22 +1,25 @@
 package Model;
 
 public class Eleve_parent extends Utilisateur {
-    private int id_parent;
+    private long id_parent;
     private int id_niveau;
     private String lien_parenté;
 
-    public Eleve_parent(int id, String nom, String prénom, String identifiant, String mot_de_passe,int id_parent,int id_niveau,String lien_parenté) {
-        super(id, nom, prénom, identifiant, mot_de_passe);
+    public Eleve_parent(){
+
+    }
+    public Eleve_parent(String nom, String prénom, String identifiant, String mot_de_passe,long id_parent,int id_niveau,String lien_parenté,String mail_parent,int rang_fils) {
+        super(nom, prénom, identifiant, mot_de_passe,"parent"+rang_fils+"_"+mail_parent);
         this.id_parent=id_parent;
         this.id_niveau=id_niveau;
         this.lien_parenté=lien_parenté;
     }
 
-    public int getId_parent() {
+    public long getId_parent() {
         return id_parent;
     }
 
-    public void setId_parent(int id_parent) {
+    public void setId_parent(long id_parent) {
         this.id_parent = id_parent;
     }
 
@@ -35,4 +38,6 @@ public class Eleve_parent extends Utilisateur {
     public void setLien_parenté(String lien_parenté) {
         this.lien_parenté = lien_parenté;
     }
+
+
 }

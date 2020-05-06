@@ -4,13 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".PreinscriptionActivity"
     android:background="@drawable/dashboard_bg2"
-    >
 
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <LinearLayout
         android:background="@drawable/gradint_background"
         android:layout_width="match_parent"
@@ -80,6 +85,7 @@
                             android:textSize="20sp"
                             />
                         <TextView
+                            android:id="@+id/tvNiveau"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Terminal S"
@@ -114,6 +120,7 @@
                 android:layout_height="36dp"
                 android:src="@drawable/ic_email_black_24dp"/>
             <TextView
+                android:id="@+id/tvEmail"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
@@ -179,5 +186,5 @@
         android:textSize="18dp"
         android:fontFamily="@font/calibri_regular"
         ></Button>
-
+</LinearLayout>
 </ScrollView>

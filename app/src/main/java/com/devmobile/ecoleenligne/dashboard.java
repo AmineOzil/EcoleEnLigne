@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+
+import Model.Utilisateur;
 
 public class dashboard extends AppCompatActivity {
 
@@ -22,10 +25,14 @@ public class dashboard extends AppCompatActivity {
     final private int forum=3;
     final private int profile=4;
     Fragment contenu=new DashboardFragment();
+    static Utilisateur user;
+    static String niveau;
     RelativeLayout fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        user=(Utilisateur) getIntent().getSerializableExtra("USER");
+        niveau=inscription.getStringNiveau(getIntent().getIntExtra("NIVEAU",new Integer(1)));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         fm=findViewById(R.id.dashboard);
@@ -80,5 +87,8 @@ public class dashboard extends AppCompatActivity {
                 break;
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.contenu,contenu).commit();
+    }
+    public static void getUserDetails(TextView tv){
+        tv.setText(user.getNom()+" "+user.getPrénom());
     }
 }

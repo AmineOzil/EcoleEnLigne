@@ -10,6 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string-array name="niveaux">
+        <item>Niveau d\'études</item>
         <item>Primaire</item>
         <item>Seconde</item>
         <item>Terminal L</item>

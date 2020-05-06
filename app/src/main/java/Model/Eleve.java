@@ -2,10 +2,11 @@ package Model;
 
 public class Eleve extends Utilisateur {
     private int id_niveau;
-    private String email;
+    public Eleve(){
 
-    public Eleve(String nom, String prénom, String identifiant, String mot_de_passe,int id_niveau) {
-        super(nom, prénom, identifiant, mot_de_passe);
+    }
+    public Eleve(String nom, String prénom, String identifiant, String mot_de_passe,int id_niveau,String email) {
+        super(nom, prénom, identifiant, mot_de_passe,email);
         this.id_niveau=id_niveau;
 
     }
@@ -18,11 +19,4 @@ public class Eleve extends Utilisateur {
         this.id_niveau = id_niveau;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
