@@ -97,23 +97,7 @@ public class login extends AppCompatActivity {
             if(!isEmail(user[0])){
                 loginWithUsername(user,pass);
             }else{
-                mAuth.signInWithEmailAndPassword(user[0], pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        futilisateur=mAuth.getCurrentUser();
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            if(futilisateur.isEmailVerified()){
-                                finish();
-                                startActivity(new Intent(login.this, dashboard.class));
-
-                            }else{
-                                Toast.makeText(login.this,"Veuillez vérifier votre émail",Toast.LENGTH_SHORT).show();
-                                mAuth.signOut();
-                            }
-                        }
-                    }
-                });
+               loginWithEmail(user,pass);
             }
         }
     }
@@ -191,6 +175,133 @@ public class login extends AppCompatActivity {
                             }else{
                                 DatabaseReference users = FirebaseDatabase.getInstance().getReference("Parent");
                                 Query query = users.orderByChild("identifiant").equalTo(user[0]);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        if(dataSnapshot.exists()){
+                                            for (DataSnapshot ds:dataSnapshot.getChildren()){
+                                                final Parent utilisateur= ds.getValue(Parent.class);
+                                                Toast.makeText(login.this,utilisateur.getNom()+" "+utilisateur.getPrénom()+" "+utilisateur.getEmail()+"",Toast.LENGTH_SHORT);
+                                                Email[0] =utilisateur.getEmail();
+                                                progressDialog.setMessage("Signing In Please Wait..");
+                                                progressDialog.show();
+
+                                                mAuth.signInWithEmailAndPassword(Email[0], pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                                        futilisateur=mAuth.getCurrentUser();
+                                                        progressDialog.dismiss();
+                                                        if (task.isSuccessful()) {
+                                                            if(futilisateur.isEmailVerified()){
+                                                                finish();
+                                                                Intent intent=new Intent(login.this, dashboard.class);
+                                                                intent.putExtra("USER", utilisateur);
+                                                                intent.putExtra("NIVEAU", 5);
+                                                                startActivity(intent);
+
+                                                            }else{
+                                                                Toast.makeText(login.this,"Veuillez vérifier votre émail",Toast.LENGTH_SHORT).show();
+                                                                mAuth.signOut();
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                        }else{
+                                            Toast.makeText(login.this,"Email doesn't exist",Toast.LENGTH_SHORT);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+    public void loginWithEmail(final String[] email,final String pass){
+        final String[] Email = {""};
+        Log.v("checking if"+email[0]+" exists"," in table: "+"Elève");
+        DatabaseReference users = FirebaseDatabase.getInstance().getReference("Elève_Parent");
+        Query query = users.orderByChild("email").equalTo(email[0]);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for (DataSnapshot ds:dataSnapshot.getChildren()){
+                        final Eleve_parent utilisateur= ds.getValue(Eleve_parent.class);
+                        Toast.makeText(login.this,utilisateur.getNom()+" "+utilisateur.getPrénom()+" "+utilisateur.getEmail()+"",Toast.LENGTH_SHORT).show();
+                        Email[0] =utilisateur.getEmail();
+                        progressDialog.setMessage("Signing In Please Wait..");
+                        progressDialog.show();
+
+                        mAuth.signInWithEmailAndPassword(Email[0], pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressDialog.dismiss();
+                                if (task.isSuccessful()) {
+                                    finish();
+                                    Intent intent=new Intent(login.this, dashboard.class);
+                                    intent.putExtra("USER", utilisateur);
+                                    intent.putExtra("NIVEAU", utilisateur.getId_niveau());
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                    }
+                }else{
+                    DatabaseReference users = FirebaseDatabase.getInstance().getReference("Elève");
+                    Query query = users.orderByChild("email").equalTo(email[0]);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()){
+                                for (DataSnapshot ds:dataSnapshot.getChildren()){
+                                    final Eleve utilisateur= ds.getValue(Eleve.class);
+                                    Toast.makeText(login.this,utilisateur.getNom()+" "+utilisateur.getPrénom()+" "+utilisateur.getEmail()+"",Toast.LENGTH_SHORT).show();
+                                    Email[0] =utilisateur.getEmail();
+                                    progressDialog.setMessage("Signing In Please Wait..");
+                                    progressDialog.show();
+
+                                    mAuth.signInWithEmailAndPassword(Email[0], pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            futilisateur=mAuth.getCurrentUser();
+                                            progressDialog.dismiss();
+                                            if (task.isSuccessful()) {
+                                                if(futilisateur.isEmailVerified()){
+                                                    finish();
+                                                    Intent intent=new Intent(login.this, dashboard.class);
+                                                    intent.putExtra("USER", utilisateur);
+                                                    intent.putExtra("NIVEAU", utilisateur.getId_niveau());
+                                                    startActivity(intent);
+                                                }else{
+                                                    Toast.makeText(login.this,"Veuillez vérifier votre émail",Toast.LENGTH_SHORT).show();
+                                                    mAuth.signOut();
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                            }else{
+                                DatabaseReference users = FirebaseDatabase.getInstance().getReference("Parent");
+                                Query query = users.orderByChild("email").equalTo(email[0]);
                                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

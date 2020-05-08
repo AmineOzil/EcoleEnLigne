@@ -19,7 +19,6 @@ public class DashboardFragment extends Fragment {
             case "Primaire": view=inflater.inflate(R.layout.fragment_dashboard_p,container,false);
                 return view;
             default: return view;
-
         }
     }
 

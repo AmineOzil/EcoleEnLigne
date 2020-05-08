@@ -46,6 +46,7 @@ import java.util.Random;
 
 import Model.Eleve;
 import Model.Eleve_parent;
+import Model.Matière;
 import Model.Parent;
 import Model.Utilisateur;
 
@@ -234,8 +235,8 @@ public class inscription extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
 
-                                        FirebaseDatabase.getInstance().getReference(type)
-                                                .push().setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        FirebaseDatabase.getInstance().getReference("Elève")
+                                                .push().setValue(u.getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 Toast.makeText(inscription.this, "Inscription effectuée", Toast.LENGTH_SHORT).show();
@@ -257,6 +258,24 @@ public class inscription extends AppCompatActivity {
 
         //auth.signOut();
     }
+    public void ajouterMatière(final Matière m){
+
+        FirebaseDatabase.getInstance().getReference("Matière")
+                                                .push().setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Toast.makeText(inscription.this, "Inscription effectuée", Toast.LENGTH_SHORT).show();
+                                                auth.signOut();
+                                                Intent success = new Intent(inscription.this, checkEmail.class);
+                                                startActivity(success);
+                                            }
+                                        });
+
+
+        //auth.signOut();
+    }
+
+
     public void addParentetEleves(final Parent p,final ArrayList<Eleve_parent> e){
         getUsersCount(p,"Elève");
         getUsersCount(p,"Parent");
@@ -273,7 +292,7 @@ public class inscription extends AppCompatActivity {
                                         if (task.isSuccessful()) {
 
                                             FirebaseDatabase.getInstance().getReference("Parent")
-                                                    .push().setValue(p).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    .push().setValue(p.getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     Toast.makeText(inscription.this, "Inscription du parent effectuée", Toast.LENGTH_SHORT).show();
@@ -307,7 +326,7 @@ public class inscription extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         FirebaseDatabase.getInstance().getReference("Elève_Parent")
-                                .push().setValue(fils.get(i)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                .push().setValue(fils.get(i).getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 addFils(i+1,fils,p);
