@@ -1,5 +1,5 @@
 # enovSchool Réalisé par: Mohammed-Amin BOUALI et Oussama Nassim Shout -M1 AIGLE 2019/20-
-Une application mobile permettant aux étudiant de poursuivre leurs cours en ligne.
+Une application mobile permettant aux étudiants de poursuivre leurs cours en ligne.
 version 1: pour tester l'application, vous pouvez soit importer le projet sur Android studio et le compiler et l'exécuter 
 sur votre téléphone (recommandé), soit télécharger l'APK et l'installer directement  (l'APK dans le dossier APK).
 L'application se démarre avec une fenêtre de bienvenue, cliquez sur <<Commencer l'aventure>> après vous pouvez soit vous inscrire soit vous 
