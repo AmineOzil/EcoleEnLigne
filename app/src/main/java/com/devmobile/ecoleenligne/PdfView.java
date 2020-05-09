@@ -2,6 +2,7 @@ package com.devmobile.ecoleenligne;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +18,20 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
 
 public class PdfView extends Fragment {
     private TextView pdftext;
     private PDFView pdfView;
+    private String URL="https://www.lyceedadultes.fr/sitepedagogique/documents/math/mathTermS/01_rappels_suites_algorithme/01_cours_rappels_suites_algorithme.pdf";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_pdfviewer,container,false);
         pdftext= view.findViewById(R.id.pdftext);
         pdfView= view.findViewById(R.id.pdfview);
-        new RetrievePDFStream().execute("http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BDiscala-IN2005%5DBasesDeLinformatique.pdf");
+        new RetrievePDFStream().execute(URL);
         return view;
     }
     class RetrievePDFStream extends AsyncTask<String,Void, InputStream>{
@@ -37,7 +41,9 @@ public class PdfView extends Fragment {
             InputStream inputStream=null;
             try{
                 URL url=new URL(strings[0]);
-                HttpURLConnection urlConnection=(HttpURLConnection) url.openConnection();
+                Log.v("URL:",url+"");
+                HttpsURLConnection urlConnection=(HttpsURLConnection) url.openConnection();
+                Log.v("Réponse",urlConnection.getResponseCode()+"");
                 if(urlConnection.getResponseCode()==200){
                     inputStream=new BufferedInputStream(urlConnection.getInputStream());
 
@@ -47,5 +53,13 @@ public class PdfView extends Fragment {
             }
             return inputStream;
         }
+        @Override
+        protected void onPostExecute(InputStream inputStream){
+         pdfView.fromStream(inputStream).load();
+        }
+
+    }
+    public void setUrl(String URL){
+        this.URL=URL;
     }
 }

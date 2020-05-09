@@ -16,4 +16,5 @@
         <item>Terminal L</item>
         <item>Terminal S</item>
     </string-array>
+    <string name="question"> Question 1/5: On test juste est-ce \n ça marche ou non </string>
 </resources>

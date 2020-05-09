@@ -71,6 +71,7 @@
             android:rowCount="3">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -81,7 +82,6 @@
                 app:cardBackgroundColor="#FCF3F3">
 
                 <LinearLayout
-                    android:id="@+id/cours"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="left"
@@ -116,10 +116,11 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="#FCF3F3">
+                app:cardBackgroundColor="#FCF3F3"
+                android:id="@+id/video"
+                >
 
                 <LinearLayout
-                    android:id="@+id/video"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="left"
@@ -138,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:layout_gravity="center"
-                        android:text="Cours"
+                        android:text="Vidéo"
                         android:textColor="@color/commencer"
                         android:textSize="26sp"
                         android:textAppearance="@font/calibri_bold"/>
@@ -158,10 +159,11 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="#FCF3F3">
+                app:cardBackgroundColor="#FCF3F3"
+                android:id="@+id/quiz"
+                >
 
                 <LinearLayout
-                    android:id="@+id/quiz"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="left"

@@ -36,7 +36,7 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterChapitre.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterChapitre.MyViewHolder holder, final int position) {
         holder.nom.setText(chapitres.get(position).getNom());
         holder.description.setText(chapitres.get(position).getDescription());
         holder.img_chapitre.setImageResource(R.drawable.chapter_img);
@@ -45,7 +45,8 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
             public void onClick(View v) {
                 FragmentManager fm=((AppCompatActivity)c).getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
-                Fragment chapter =new PdfView();
+                ChapitreMenu chapter =new ChapitreMenu();
+                chapter.setChapitre(chapitres.get(position));
                 ft.replace(R.id.contenu,chapter);
                 ft.commit();
             }
