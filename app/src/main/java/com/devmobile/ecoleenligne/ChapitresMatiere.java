@@ -1,19 +1,17 @@
 package com.devmobile.ecoleenligne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -53,8 +51,22 @@ public class ChapitresMatiere extends Fragment {
         retour_matières1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back1 = new Intent(getActivity(),dashboard.class);
-                startActivity(back1);
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment dash =new DashboardFragment();
+                ft.replace(R.id.contenu,dash);
+                ft.commit();
+            }
+        });
+
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment profile =new ProfileActivity();
+                ft.replace(R.id.contenu,profile);
+                ft.commit();
             }
         });
 

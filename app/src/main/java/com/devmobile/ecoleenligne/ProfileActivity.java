@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,8 +46,11 @@ public class ProfileActivity extends Fragment {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(getActivity(), dashboard.class);
-                startActivity(back);
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment dash =new DashboardFragment();
+                ft.replace(R.id.contenu,dash);
+                ft.commit();
             }
         });
         return view;

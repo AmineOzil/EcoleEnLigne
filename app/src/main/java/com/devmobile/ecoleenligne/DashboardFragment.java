@@ -1,6 +1,5 @@
 package com.devmobile.ecoleenligne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +24,6 @@ public class DashboardFragment extends Fragment {
                 FragmentTransaction ft=fm.beginTransaction();
                 Fragment chapitre=new ChapitresMatiere();
                 ft.replace(R.id.contenu,chapitre);
-                ft.addToBackStack(null);
                 ft.commit();
             }
         });
