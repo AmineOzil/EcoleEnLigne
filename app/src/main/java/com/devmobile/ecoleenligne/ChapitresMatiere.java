@@ -9,7 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -70,22 +69,14 @@ public class ChapitresMatiere extends Fragment {
                 ft.commit();
             }
         });
-        CardView cd=(CardView) myRecycler.getChildAt(0);
-        cd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fm=getFragmentManager();
-                FragmentTransaction ft=fm.beginTransaction();
-                Fragment profile =new PdfView();
-                ft.replace(R.id.contenu,profile);
-                ft.commit();
-            }
-        });
+
 
 
         myRecycler = view.findViewById(R.id.recycler_chapitres);
         myRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecycler.setHasFixedSize(true);
+
+
         chapterData = new ArrayList<Chapitre>();
         mDatabase = FirebaseDatabase.getInstance().getReference("Matière").child("-M6ojokYtf2FoVlFlr-H").child("chapitres");
         mDatabase.addValueEventListener(new ValueEventListener() {

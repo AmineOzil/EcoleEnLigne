@@ -27,7 +27,7 @@ public class PdfView extends Fragment {
         View view=inflater.inflate(R.layout.fragment_pdfviewer,container,false);
         pdftext= view.findViewById(R.id.pdftext);
         pdfView= view.findViewById(R.id.pdfview);
-        new RetrievePDFStream().execute("https://drive.google.com/file/d/1Ud1RkV1l8f3QiULr5Kmh2WYrLrerAxox/view?fbclid=IwAR3skQnYoLLfeuVV5yWsV1L2u4BLzLS9vgR-IQnrBlPfma0rZJPLqm9BmbM");
+        new RetrievePDFStream().execute("http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BDiscala-IN2005%5DBasesDeLinformatique.pdf");
         return view;
     }
     class RetrievePDFStream extends AsyncTask<String,Void, InputStream>{

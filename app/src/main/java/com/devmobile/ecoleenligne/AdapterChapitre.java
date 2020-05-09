@@ -1,6 +1,7 @@
 package com.devmobile.ecoleenligne;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -35,6 +40,16 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
         holder.nom.setText(chapitres.get(position).getNom());
         holder.description.setText(chapitres.get(position).getDescription());
         holder.img_chapitre.setImageResource(R.drawable.chapter_img);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=((AppCompatActivity)c).getSupportFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment chapter =new PdfView();
+                ft.replace(R.id.contenu,chapter);
+                ft.commit();
+            }
+        });
     }
 
 
@@ -43,7 +58,7 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
         return chapitres.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView img_chapitre;
         TextView nom,description;
@@ -53,6 +68,11 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
             this.img_chapitre = itemView.findViewById(R.id.img_chapitre);
             this.nom = itemView.findViewById(R.id.tvChapitre);
             this.description = itemView.findViewById(R.id.tvDescription);
+
+        }
+
+        @Override
+        public void onClick(View v) {
 
         }
     }
