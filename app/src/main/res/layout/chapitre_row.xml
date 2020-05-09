@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/img_chapitre"
-            android:src="@drawable/img_profile"
+            android:src="@drawable/chapter_img"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:id="@+id/tvChapitre"
             android:text="Chapitre"
             android:textSize="22sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/commencer"
             android:layout_toRightOf="@+id/img_chapitre"
             android:layout_toEndOf="@+id/img_chapitre"
             android:layout_marginLeft="10dp"
@@ -39,7 +39,7 @@
             android:id="@+id/tvDescription"
             android:text="Description"
             android:textSize="18sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/profile_info"
             android:layout_toRightOf="@+id/img_chapitre"
             android:layout_toEndOf="@+id/img_chapitre"
             android:layout_marginLeft="10dp"

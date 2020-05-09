@@ -1,10 +1,12 @@
 package Model;
 
-public class Réponse {
+public class Réponses_Forum {
+
     private int id;
     private String contenu;
     private int id_auteur;
-    public Réponse(int id,String contenu,int id_auteur){
+
+    public Réponses_Forum(int id, String contenu, int id_auteur){
         this.id=id;
         this.id_auteur=id_auteur;
         this.contenu=contenu;

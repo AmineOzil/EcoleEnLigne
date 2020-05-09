@@ -8,13 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends Fragment {
@@ -35,6 +31,7 @@ public class ProfileActivity extends Fragment {
         dashboard.getUserDetails(nom_prénom);
         email.setText(dashboard.user.getEmail());
         niveau.setText(dashboard.niveau);
+        mAuth = FirebaseAuth.getInstance();
         deconnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

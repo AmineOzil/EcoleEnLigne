@@ -4,9 +4,35 @@ import java.util.ArrayList;
 
 public class Chapitre {
     private int id;
+    private int img;
     private String nom;
     private String contenu;
-    private ArrayList<Quiz> quizzes;
+    private String description;
+    private Quiz quiz;
+
+    public Chapitre() {
+    }
+
+    public Chapitre(int id, int img, String nom, String contenu, String description, Quiz quiz) {
+        this.id = id;
+        this.img = img;
+        this.nom = nom;
+        this.contenu = contenu;
+        this.description = description;
+        this.quiz = quiz;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
 
     public int getId() {
         return id;
@@ -32,14 +58,19 @@ public class Chapitre {
         this.contenu = contenu;
     }
 
-    public ArrayList<Quiz> getQuizzes() {
-        return quizzes;
+    public Quiz getQuiz() {
+        return quiz;
     }
 
     public void setQuizzes(ArrayList<Quiz> quizzes) {
-        this.quizzes = quizzes;
+        this.quiz = quiz;
     }
-    public void ajouterQuiz(Quiz quiz){
-        quizzes.add(quiz);
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

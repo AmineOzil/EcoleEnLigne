@@ -2,14 +2,14 @@ package Model;
 
 import java.util.ArrayList;
 
-public class Question {
-private int id;
-private String titre;
+public class Questions_Forum {
+    private int id;
+    private String titre;
     private String contenu;
-    private ArrayList<Réponse> réponses;
+    private ArrayList<Réponses_Forum> réponses;
 
 
-    public Question(int id,String titre,String contenu){
+    public Questions_Forum(int id, String titre, String contenu){
         this.id=id;
         this.titre=titre;
         this.contenu=contenu;
@@ -39,14 +39,14 @@ private String titre;
         this.contenu = contenu;
     }
 
-    public ArrayList<Réponse> getRéponses() {
+    public ArrayList<Réponses_Forum> getRéponses() {
         return réponses;
     }
 
-    public void setRéponses(ArrayList<Réponse> réponses) {
+    public void setRéponses(ArrayList<Réponses_Forum> réponses) {
         this.réponses = réponses;
     }
-    public void ajouterReponse(Réponse réponse){
+    public void ajouterReponse(Réponses_Forum réponse){
         réponses.add(réponse);
     }
 }

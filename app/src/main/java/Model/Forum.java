@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Forum {
     private static Forum singleton_forum;
-    private ArrayList<Question> questions;
+    private ArrayList<Questions_Forum> questions;
 
     private Forum(){
         super();
@@ -21,14 +21,14 @@ public class Forum {
     }
 
 
-    public ArrayList<Question> getQuestions() {
+    public ArrayList<Questions_Forum> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(ArrayList<Question> questions) {
+    public void setQuestions(ArrayList<Questions_Forum> questions) {
         this.questions = questions;
     }
-    public void addQuestion(Question question){
+    public void addQuestion(Questions_Forum question){
         this.questions.add(question);
     }
 }
