@@ -30,19 +30,13 @@ import Model.Chapitre;
 
 public class ChapitresMatiere extends Fragment {
 
-    final private int exams=1;
-    final private int home=2;
-    final private int forum=3;
-    final private int profile=4;
-    Fragment contenu=new ChapitresMatiere();
-    RelativeLayout fm;
+
 
     RecyclerView myRecycler;
     AdapterChapitre myAdapter;
     ArrayList<Chapitre> chapterData ;
     DatabaseReference mDatabase;
     FirebaseRecyclerOptions<Chapitre> options ;
-    private static int selectionné =2;
     TextView retour_matières2;
     ImageView retour_matières1, img_profile;
 
@@ -54,31 +48,20 @@ public class ChapitresMatiere extends Fragment {
         retour_matières2 = view.findViewById(R.id.tvRetour_matieres);
         img_profile = view.findViewById(R.id.img_profile);
 
-        fm=view.findViewById(R.id.dashboard2);
 
 
         retour_matières1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back1 = new Intent(ChapitresMatiere.this,dashboard.class);
+                Intent back1 = new Intent(getActivity(),dashboard.class);
                 startActivity(back1);
             }
         });
 
-        img_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dashboard d=new dashboard();
-                d.setContenu(4);
-                Intent back2 = new Intent(ChapitresMatiere.this,dashboard.class);
-                startActivity(back2);
-            }
-        });
 
 
-
-        myRecycler = findViewById(R.id.recycler_chapitres);
-        myRecycler.setLayoutManager(new LinearLayoutManager(this));
+        myRecycler = view.findViewById(R.id.recycler_chapitres);
+        myRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecycler.setHasFixedSize(true);
         chapterData = new ArrayList<Chapitre>();
         mDatabase = FirebaseDatabase.getInstance().getReference("Matière").child("-M6ojokYtf2FoVlFlr-H").child("chapitres");
@@ -89,13 +72,13 @@ public class ChapitresMatiere extends Fragment {
                     Chapitre chapitre = dataSnapshot1.getValue(Chapitre.class);
                     chapterData.add(chapitre);
                 }
-                myAdapter = new AdapterChapitre(ChapitresMatiere.this, chapterData);
+                myAdapter = new AdapterChapitre(getActivity(), chapterData);
                 myRecycler.setAdapter(myAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ChapitresMatiere.this, "Oups.. something is wrong !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Oups.. something is wrong !", Toast.LENGTH_SHORT).show();
             }
 
 

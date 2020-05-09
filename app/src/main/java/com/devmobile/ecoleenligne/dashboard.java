@@ -91,4 +91,5 @@ public class dashboard extends AppCompatActivity {
     public static void getUserDetails(TextView tv){
         tv.setText(user.getNom()+" "+user.getPrénom());
     }
+
 }
