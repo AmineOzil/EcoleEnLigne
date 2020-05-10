@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -47,6 +45,18 @@ public class ChapitreMenu extends Fragment {
                 ft.commit();
             }
         });
+        vidéo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                VideoCour videoCour =new VideoCour();
+                videoCour.setVideo(videoCour.getVideo());
+                ft.replace(R.id.contenu,videoCour);
+                ft.commit();
+            }
+        });
+
         return view;
     }
     public void setChapitre(Chapitre chapitre){
