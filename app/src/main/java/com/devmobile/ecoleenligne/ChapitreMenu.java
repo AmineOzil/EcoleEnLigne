@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -19,9 +20,10 @@ public class ChapitreMenu extends Fragment {
     private CardView vidéo;
     private CardView quiz;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.chapitre_fragment,container,false);
+        final View view=inflater.inflate(R.layout.chapitre_fragment,container,false);
         cours=view.findViewById(R.id.cours);
         vidéo=view.findViewById(R.id.video);
+
         quiz=view.findViewById(R.id.quiz);
         cours.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,17 @@ public class ChapitreMenu extends Fragment {
                 PdfView chapter =new PdfView();
                 chapter.setUrl(chapitre.getContenu());
                 ft.replace(R.id.contenu,chapter);
+                ft.commit();
+            }
+        });
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                QuizView chapter =new QuizView();
+                chapter.setQuiz(chapitre.getQuiz());
+                ft.replace(R.id.contenu,chapter).addToBackStack(null);
                 ft.commit();
             }
         });
