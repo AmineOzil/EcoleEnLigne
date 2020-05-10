@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.Collections;
 
@@ -102,7 +104,12 @@ public class QuizView extends Fragment {
                 if (compteurQst<+5)
                 passerQuestion(quiz.getQuestions().get(compteurQst));
                 else{
-                    questionView.setText("Vous avez terminé le quiz votre score est: "+compteurCorrect+"/5");
+                    FragmentManager fm=getFragmentManager();
+                    FragmentTransaction ft=fm.beginTransaction();
+                    ScoreQuiz chapter =new ScoreQuiz();
+                    chapter.setScore(compteurCorrect);
+                    ft.replace(R.id.contenu,chapter).addToBackStack(null);
+                    ft.commit();
                 }
             }
         }, 3000);
