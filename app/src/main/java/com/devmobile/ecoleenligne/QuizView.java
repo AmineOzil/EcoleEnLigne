@@ -108,7 +108,7 @@ public class QuizView extends Fragment {
                     FragmentTransaction ft=fm.beginTransaction();
                     ScoreQuiz chapter =new ScoreQuiz();
                     chapter.setScore(compteurCorrect);
-                    ft.replace(R.id.contenu,chapter).addToBackStack(null);
+                    ft.replace(R.id.contenu,chapter);
                     ft.commit();
                 }
             }
@@ -116,7 +116,7 @@ public class QuizView extends Fragment {
     }
     public void passerQuestion(Question_Quiz question_quiz){
         compteurQst++;
-        questionView.setText("Question"+compteurQst+"/5: "+question_quiz.getContenu());
+        questionView.setText("Question "+compteurQst+"/5: "+question_quiz.getContenu());
         choix1.setBackgroundResource(R.drawable.round_edit_text);
         choix2.setBackgroundResource(R.drawable.round_edit_text);
         choix3.setBackgroundResource(R.drawable.round_edit_text);

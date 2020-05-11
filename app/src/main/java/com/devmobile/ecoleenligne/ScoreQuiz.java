@@ -13,6 +13,7 @@ public class ScoreQuiz extends Fragment {
     private int score;
     private TextView scoret,msgQuiz;
     private ImageView reaction;
+    private ImageView retour;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.resultat_quiz,container,false);
         scoret=view.findViewById(R.id.score);
@@ -23,6 +24,14 @@ public class ScoreQuiz extends Fragment {
             msgQuiz.setText("Révise le cours");
             reaction.setImageResource(R.drawable.triste);
         }
+        retour=view.findViewById(R.id.retour_score1);
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStackImmediate();
+            }
+        });
+
         return view;
     }
     public void setScore(int score){

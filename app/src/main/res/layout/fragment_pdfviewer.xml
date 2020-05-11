@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFBFB"
+    >
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/retour_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/retour"
+        android:visibility="visible"></ImageView>
     <com.github.barteksc.pdfviewer.PDFView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/retour_pdf"
         android:id="@+id/pdfview">
     </com.github.barteksc.pdfviewer.PDFView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pdftext"/>
+
 
 
 </RelativeLayout>

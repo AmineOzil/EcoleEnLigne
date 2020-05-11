@@ -47,7 +47,7 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
                 FragmentTransaction ft=fm.beginTransaction();
                 ChapitreMenu chapter =new ChapitreMenu();
                 chapter.setChapitre(chapitres.get(position));
-                ft.replace(R.id.contenu,chapter);
+                ft.replace(R.id.contenu,chapter).addToBackStack(null);
                 ft.commit();
             }
         });
