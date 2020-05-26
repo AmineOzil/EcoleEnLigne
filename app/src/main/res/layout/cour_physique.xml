@@ -53,29 +53,41 @@
                 android:src="@drawable/img_profile" />
 
         </RelativeLayout>
-
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:layout_marginTop="20dp"
-            tools:context=".PreinscriptionActivity">
+            tools:context=".PreinscriptionActivity"
+            android:id="@+id/scrollingchapitres"
+            >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:id="@+id/recycler_chapitres"
-               >
-
-
-
-
+                >
             </androidx.recyclerview.widget.RecyclerView>
 
 
         </ScrollView>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/line"
+                android:layout_alignTop="@id/scrollingchapitres"
+                >
+            </ImageView>
+        </RelativeLayout>
 
         <!--   <androidx.cardview.widget.CardView
                android:layout_width="match_parent"

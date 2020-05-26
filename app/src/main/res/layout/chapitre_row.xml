@@ -1,55 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/point"
+        android:id="@+id/point1"/>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
+    android:layout_toRightOf="@id/point1"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/img_chapitre"
-            android:src="@drawable/chapter_img"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvChapitre"
-            android:text="Chapitre"
-            android:textSize="22sp"
-            android:textColor="@color/commencer"
-            android:layout_toRightOf="@+id/img_chapitre"
-            android:layout_toEndOf="@+id/img_chapitre"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:textStyle="bold"
-            />
-        <TextView
+        <RelativeLayout
+            android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvDescription"
-            android:text="Description"
-            android:textSize="18sp"
-            android:textColor="@color/profile_info"
-            android:layout_toRightOf="@+id/img_chapitre"
-            android:layout_toEndOf="@+id/img_chapitre"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tvChapitre"
-            />
+            android:padding="16dp"
+            android:id="@+id/element"
+            android:paddingLeft="20dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_chapitre"
+                android:src="@drawable/chapter_img"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvChapitre"
+                android:text="Chapitre"
+                android:textSize="22sp"
+                android:textColor="@color/commencer"
+                android:layout_toRightOf="@+id/img_chapitre"
+                android:layout_toEndOf="@+id/img_chapitre"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                />
+     <!--       <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDescription"
+                android:text="Description"
+                android:textSize="18sp"
+                android:textColor="@color/profile_info"
+                android:layout_toRightOf="@+id/img_chapitre"
+                android:layout_toEndOf="@+id/img_chapitre"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tvChapitre"
+                />
+        !-->
+
+        </RelativeLayout>
 
 
-    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+</RelativeLayout>
