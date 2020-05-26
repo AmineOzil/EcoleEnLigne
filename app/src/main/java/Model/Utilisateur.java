@@ -1,18 +1,6 @@
 package Model;
 
-import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.io.Serializable;
-import java.util.EventListener;
 
 public class Utilisateur implements Serializable {
 
@@ -22,6 +10,7 @@ public class Utilisateur implements Serializable {
     private String identifiant;
     private String mot_de_passe;
     private String email;
+
     public Utilisateur(){
 
     }

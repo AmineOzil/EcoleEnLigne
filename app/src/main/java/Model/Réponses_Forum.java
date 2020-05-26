@@ -1,22 +1,42 @@
 package Model;
 
+import java.util.Date;
+
 public class Réponses_Forum {
 
-    private int id;
+    private int id =0;
+    private String titre;
+    private String réponseUser;
+    private long RéponseTime;
     private String contenu;
-    private int id_auteur;
 
-    public Réponses_Forum(int id, String contenu, int id_auteur){
-        this.id=id;
-        this.id_auteur=id_auteur;
-        this.contenu=contenu;
+
+
+    public Réponses_Forum() {
     }
+
+    public Réponses_Forum(String réponseUser, String contenu){
+        //this.titre=titre;
+        this.réponseUser = réponseUser;
+        this.contenu=contenu;
+        RéponseTime = new Date().getTime();
+
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
     }
 
     public String getContenu() {
@@ -27,11 +47,35 @@ public class Réponses_Forum {
         this.contenu = contenu;
     }
 
-    public int getId_auteur() {
-        return id_auteur;
+
+    public String getRéponseUser() {
+        return réponseUser;
     }
 
-    public void setId_auteur(int id_auteur) {
-        this.id_auteur = id_auteur;
+    public void setRéponseUser(String réponseUser) {
+        this.réponseUser = réponseUser;
     }
+
+    public long getRéponseTime() {
+        return RéponseTime;
+    }
+
+    public void setRéponseTime(long réponseTime) {
+        this.RéponseTime = réponseTime;
+    }
+
+/*
+    public ArrayList<Réponses_Forum> getRéponses() {
+        return réponses;
+    }
+
+    public void setRéponses(ArrayList<Réponses_Forum> réponses) {
+        this.réponses = réponses;
+    }
+    public void ajouterReponse(Réponses_Forum réponse){
+        réponses.add(réponse);
+    }
+
+ */
 }
+

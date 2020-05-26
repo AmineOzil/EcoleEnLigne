@@ -1,7 +1,6 @@
 package com.devmobile.ecoleenligne;
 
 import android.os.Bundle;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -83,6 +82,11 @@ public class dashboard extends AppCompatActivity {
                 selectionné =home;
                 fm.setBackgroundResource(R.drawable.dashboard);
                 break;
+            case forum:    contenu= new ForumFragment();
+                selectionné =forum;
+                fm.setBackgroundResource(R.drawable.dashboardcours);
+                break;
+
             default:      Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
                 break;
         }

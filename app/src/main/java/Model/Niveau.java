@@ -3,9 +3,11 @@ package Model;
 import java.util.ArrayList;
 
 public class Niveau {
+
     private int id;
     private String nom;
     private ArrayList<Matière> matières;
+
     public Niveau(int id,String nom){
         this.id=id;
         this.nom=nom;
