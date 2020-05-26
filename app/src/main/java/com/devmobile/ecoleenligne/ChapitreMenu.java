@@ -38,6 +38,7 @@ public class ChapitreMenu extends Fragment {
                 FragmentTransaction ft=fm.beginTransaction();
                 PdfView chapter =new PdfView();
                 chapter.setUrl(chapitre.getContenu());
+                chapter.setChapitreNom(chapitre.getNom());
                 ft.replace(R.id.contenu,chapter).addToBackStack(null);
                 ft.commit();
             }
