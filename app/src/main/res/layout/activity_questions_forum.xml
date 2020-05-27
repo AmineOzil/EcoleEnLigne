@@ -10,7 +10,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/dashboardcours"
+    android:layout_centerVertical="true"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/question_bottom_bar"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/dashboard2">
+
     <ImageView
         android:id="@+id/retour_forum"
         android:layout_width="wrap_content"
@@ -30,6 +46,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="21sp"
         android:textStyle="normal" />
+
 
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -91,11 +108,30 @@
 
         </RelativeLayout>
 
+
     </androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/grid_qst"
+        android:id="@+id/recycler_questions_forum"
+        />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
 <RelativeLayout
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/question_bottom_bar">
+    android:id="@+id/question_bottom_bar"
+    android:layout_centerHorizontal="true"
+    android:layout_centerInParent="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginTop="10dp"
+    >
 
 
     <ImageView
@@ -105,7 +141,7 @@
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        />
 
     <ImageView
         android:id="@+id/submit_button"
@@ -114,7 +150,8 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:layout_marginTop="15dp"
+        />
 
 
     <EditText
@@ -123,7 +160,6 @@
         android:layout_toLeftOf="@+id/submit_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         />
 </RelativeLayout>
 
@@ -140,12 +176,5 @@
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll"
         ></androidx.recyclerview.widget.RecyclerView>-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alignmentMode="alignMargins"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/grid_qst"
-        android:id="@+id/recycler_questions_forum"
-        />
+
 </RelativeLayout>
