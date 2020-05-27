@@ -21,6 +21,7 @@ public class ScoreQuiz extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         updateScoreQuiz(dashboard.eleve,dashboard.type,score);
         View view=inflater.inflate(R.layout.resultat_quiz,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(2);
         scoret=view.findViewById(R.id.score);
         scoret.setText("Score: "+score+"/5");
         reaction=view.findViewById(R.id.reaction);

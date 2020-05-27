@@ -36,6 +36,7 @@ public class ProgressionConnexion extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_progression,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(1);
 
         tvEspace_forum = view.findViewById(R.id.tvEspace_Progression);
         img_profile = view.findViewById(R.id.img_profile);
@@ -56,7 +57,7 @@ public class ProgressionConnexion extends Fragment {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 Fragment profile =new ProfileActivity();
-                ft.replace(R.id.contenu,profile);
+                ft.replace(R.id.contenu,profile).addToBackStack(null);
                 ft.commit();
             }
         });

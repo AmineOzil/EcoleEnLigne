@@ -16,21 +16,15 @@ public class ProgressionMenu extends Fragment {
     private CardView cours_lus;
     private CardView nbr_conex_;
     private CardView quiz_scores;
-    private ImageView retour;
+    private ImageView retour_accueil;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view=inflater.inflate(R.layout.progression_menu,container,false);
-
+        ((dashboard)getActivity()).selectedFromRetour(1);
         cours_lus=view.findViewById(R.id.cours_lus);
         nbr_conex_=view.findViewById(R.id.nbr_conex);
         quiz_scores=view.findViewById(R.id.quiz_scores);
 
-        retour=view.findViewById(R.id.retour_accueil);
-        retour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getFragmentManager().popBackStackImmediate();
-            }
-        });
         nbr_conex_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

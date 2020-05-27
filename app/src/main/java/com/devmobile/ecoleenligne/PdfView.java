@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -37,6 +35,7 @@ public class PdfView extends Fragment implements OnPageChangeListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_pdfviewer,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(2);
         pdfView= view.findViewById(R.id.pdfview);
         retour=view.findViewById(R.id.retour_pdf);
         retour.setOnClickListener(new View.OnClickListener() {

@@ -33,7 +33,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_dashboard_ts,container,false);
         Log.v("Niveau ",dashboard.niveau);
-
+        ((dashboard)getActivity()).selectedFromRetour(2);
         switch (dashboard.niveau){
             case "Terminal L": view=inflater.inflate(R.layout.fragment_dashboard_tl,container,false); break;
             case "Seconde":   view=inflater.inflate(R.layout.fragment_dashboard_s,container,false); break;

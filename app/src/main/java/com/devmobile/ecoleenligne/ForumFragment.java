@@ -48,8 +48,8 @@ public class ForumFragment extends Fragment {
 @Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.forum,container,false);
-
-        tvEspace_forum = view.findViewById(R.id.tvEspace_Forum);
+    ((dashboard)getActivity()).selectedFromRetour(3);
+    tvEspace_forum = view.findViewById(R.id.tvEspace_Forum);
         img_profile = view.findViewById(R.id.img_profile);
         icone_forum = view.findViewById(R.id.icone_forum);
         add_qst = view.findViewById(R.id.add_qst);
@@ -100,7 +100,6 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
                 }
 
                 });
-
                 return view;
         }
 

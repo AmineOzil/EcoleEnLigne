@@ -21,6 +21,7 @@ public class ChapitreMenu extends Fragment {
     private ImageView retour;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view=inflater.inflate(R.layout.chapitre_fragment,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(2);
         cours=view.findViewById(R.id.cours);
         vidéo=view.findViewById(R.id.video);
         retour=view.findViewById(R.id.retour_chapitre);

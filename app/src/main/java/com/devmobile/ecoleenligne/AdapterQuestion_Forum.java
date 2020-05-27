@@ -51,6 +51,7 @@ public class AdapterQuestion_Forum extends RecyclerView.Adapter<AdapterQuestion_
                 Forum_réponses réponses = new Forum_réponses();
                 réponses.setRéponsesData(questions_forums.get(position).getRéponses());
                 réponses.setQuestionid(String.valueOf(questions_forums.get(position).getId()));
+                réponses.setContenu(questions_forums.get(position).getContenu());
                 ft.replace(R.id.contenu,réponses).addToBackStack(null);
                 ft.commit();
             }

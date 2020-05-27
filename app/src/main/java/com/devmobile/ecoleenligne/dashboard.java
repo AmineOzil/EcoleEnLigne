@@ -2,7 +2,6 @@ package com.devmobile.ecoleenligne;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,7 +23,6 @@ import java.util.ArrayList;
 import Model.Eleve;
 import Model.Eleve_parent;
 import Model.Parent;
-import Model.Utilisateur;
 
 public class dashboard extends AppCompatActivity {
 
@@ -33,7 +31,7 @@ public class dashboard extends AppCompatActivity {
     private static int selectionné =2;
     DatabaseReference mDatabase;
     MeowBottomNavigation meo;
-    final private int exams=1;
+    final private int progression=1;
     final private int home=2;
     final private int forum=3;
     final private int profile=4;
@@ -71,7 +69,7 @@ public class dashboard extends AppCompatActivity {
 
         meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
-        meo.add(new MeowBottomNavigation.Model(exams, R.drawable.ic_exams));
+        meo.add(new MeowBottomNavigation.Model(progression, R.drawable.progression_fleche));
         meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_home));
         meo.add(new MeowBottomNavigation.Model(forum, R.drawable.ic_forum));
         meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_user));
@@ -111,10 +109,38 @@ public class dashboard extends AppCompatActivity {
                 selectionné =forum;
                 fm.setBackgroundResource(R.drawable.dashboardcours);
                 break;
+            case progression:    contenu= new ProgressionMenu();
+                selectionné =progression;
+                fm.setBackgroundResource(R.drawable.dashboardcours);
+                break;
             default:      Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
                 break;
         }
+
         getSupportFragmentManager().beginTransaction().replace(R.id.contenu,contenu).commit();
+    }
+    public void selectedFromRetour(int id){
+        switch (id){
+            case profile:
+                selectionné =profile;
+                fm.setBackgroundResource(R.drawable.dashboard_bg2);
+                break;
+            case home:
+                selectionné =home;
+                fm.setBackgroundResource(R.drawable.dashboard);
+                break;
+            case forum:
+                selectionné =forum;
+                fm.setBackgroundResource(R.drawable.dashboardcours);
+                break;
+            case progression:
+                selectionné =progression;
+                fm.setBackgroundResource(R.drawable.dashboardcours);
+                break;
+            default:      Toast.makeText(dashboard.this,"Under construction",Toast.LENGTH_LONG).show();
+                break;
+        }
+        meo.show(selectionné,true);
     }
     public static void getUserDetails(TextView tv){
         if (niveau=="Parent") tv.setText(parent.getNom()+" "+parent.getPrénom());
@@ -143,7 +169,7 @@ public class dashboard extends AppCompatActivity {
 
                 meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
-                meo.add(new MeowBottomNavigation.Model(exams, R.drawable.ic_exams));
+                meo.add(new MeowBottomNavigation.Model(progression, R.drawable.progression_fleche));
                 meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_home));
                 meo.add(new MeowBottomNavigation.Model(forum, R.drawable.ic_forum));
                 meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_user));

@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -25,6 +23,7 @@ public class ProfileActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.activity_profile,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(4);
         deconnexion= view.findViewById(R.id.bt_deconnexion);
         email=view.findViewById(R.id.tvEmail);
         niveau=view.findViewById(R.id.tvNiveau);
@@ -47,11 +46,8 @@ public class ProfileActivity extends Fragment {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm=getFragmentManager();
-                FragmentTransaction ft=fm.beginTransaction();
-                Fragment dash =new DashboardFragment();
-                ft.replace(R.id.contenu,dash);
-                ft.commit();
+                getFragmentManager().popBackStackImmediate();
+
             }
         });
         return view;

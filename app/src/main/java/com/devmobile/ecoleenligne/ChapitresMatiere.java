@@ -43,7 +43,7 @@ public class ChapitresMatiere extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.cour_physique,container,false);
-
+        ((dashboard)getActivity()).selectedFromRetour(2);
         retour_matières1 = view.findViewById(R.id.retour_matieres);
         retour_matières2 = view.findViewById(R.id.tvRetour_matieres);
         img_profile = view.findViewById(R.id.img_profile);
@@ -67,7 +67,7 @@ public class ChapitresMatiere extends Fragment {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 Fragment profile =new ProfileActivity();
-                ft.replace(R.id.contenu,profile);
+                ft.replace(R.id.contenu,profile).addToBackStack(null);
                 ft.commit();
             }
         });

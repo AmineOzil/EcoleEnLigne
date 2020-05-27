@@ -1,6 +1,5 @@
 package com.devmobile.ecoleenligne;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -32,6 +31,7 @@ public class QuizView extends Fragment {
         compteurQst=1;
         compteurCorrect=0;
         View view=inflater.inflate(R.layout.fragment_quiz,container,false);
+        ((dashboard)getActivity()).selectedFromRetour(2);
         retour=view.findViewById(R.id.retour_matieres1);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override

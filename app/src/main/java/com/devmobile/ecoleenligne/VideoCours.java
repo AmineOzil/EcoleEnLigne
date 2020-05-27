@@ -5,19 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragmentX;
-import com.google.android.youtube.player.YouTubePlayerView;
 
 public class VideoCours extends Fragment  {
 
@@ -37,6 +32,7 @@ public class VideoCours extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.video_cour, container, false);
+        ((dashboard)getActivity()).selectedFromRetour(2);
         final YouTubePlayer[] player = new YouTubePlayer[1];
         //YouTubePlayerSupportFragment youTubePlayerFragment = (YouTubePlayerSupportFragment) getActivity().getSupportFragmentManager()
           //      .findFragmentById(R.id.youtube_fragment);

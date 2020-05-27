@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,9 +41,10 @@ public class Forum_réponses extends Fragment {
     FirebaseAuth mAuth;
     ArrayList<Réponses_Forum> RéponsesData;
     EditText question;
-    ImageView emojiButton,submitButton;
+    TextView enonce_qst;
+    ImageView emojiButton,submitButton,img_qst, retour_forum;
     String questionid;
-
+    String enonce;
     RecyclerView listOfQuestion;
     Query query;
     FirebaseRecyclerOptions<Réponses_Forum> options;
@@ -56,7 +58,6 @@ public class Forum_réponses extends Fragment {
 
         layout_questions_forum = (RelativeLayout)view.findViewById(R.id.question_forum);
         listOfQuestion = (RecyclerView) view.findViewById(R.id.recycler_questions_forum);
-        //listOfQuestion = (ListView) view.findViewById(R.id.list_of_questions);
 
         listOfQuestion.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -68,6 +69,20 @@ public class Forum_réponses extends Fragment {
         emojiButton = (ImageView)view.findViewById(R.id.emoji_button);
         submitButton = (ImageView)view.findViewById(R.id.submit_button);
         question = (EditText)view.findViewById(R.id.qst_text);
+        enonce_qst = (TextView)view.findViewById(R.id.tvQst_enonce);
+        img_qst = (ImageView)view.findViewById(R.id.img_qst);
+        retour_forum = (ImageView)view.findViewById(R.id.retour_forum);
+
+        //Récupération de l'énoncé de la question
+        enonce_qst.setText(enonce);
+
+        retour_forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStackImmediate();
+            }
+        });
+
 
 
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -187,6 +202,10 @@ public class Forum_réponses extends Fragment {
             }
         });
 
+
+    }
+    public void setContenu(String enonce){
+        this.enonce=enonce;
     }
 
 }
