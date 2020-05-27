@@ -176,7 +176,7 @@
         android:clickable="true"
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="35dp"
         app:backgroundTint="#03A5FE"
         android:src="@drawable/croix"
         />

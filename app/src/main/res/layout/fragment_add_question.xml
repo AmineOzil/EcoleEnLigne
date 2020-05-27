@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="18dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edTitreQuestion"
+            android:hint="Veuillez renseigner le titre de votre question.."
+            android:inputType="text"
+            android:textColor="@color/commencer"
+            android:textColorHint="@color/profile_info"
+            android:textSize="20sp"
+            android:fontFamily="@font/calibri_regular"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/commencer"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/login">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edContenuQuestion"
+            android:hint="Ecrivez votre question içi.."
+            android:inputType="text"
+            android:textColor="@color/commencer"
+            android:textColorHint="@color/profile_info"
+            android:textSize="20sp"
+            android:fontFamily="@font/calibri_regular"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/commencer"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/login">
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

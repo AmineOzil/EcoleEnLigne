@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 import Model.Réponses_Forum;
 
-public class Forum_Qst extends Fragment {
+public class Forum_réponses extends Fragment {
 
     private static int SIGN_IN_REQUEST_CODE = 1;
     private String rep_user;

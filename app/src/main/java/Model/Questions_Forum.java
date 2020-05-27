@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Questions_Forum {
 
-    private int id =1;
+    private int id =0;
     private String titre;
     private String contenu;
     private String questionUser;

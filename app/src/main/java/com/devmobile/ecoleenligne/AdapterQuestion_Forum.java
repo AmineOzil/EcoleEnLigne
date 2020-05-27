@@ -48,7 +48,7 @@ public class AdapterQuestion_Forum extends RecyclerView.Adapter<AdapterQuestion_
             public void onClick(View v) {
                 FragmentManager fm=((AppCompatActivity)c).getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
-                Forum_Qst réponses = new Forum_Qst();
+                Forum_réponses réponses = new Forum_réponses();
                 réponses.setRéponsesData(questions_forums.get(position).getRéponses());
                 réponses.setQuestionid(String.valueOf(questions_forums.get(position).getId()));
                 ft.replace(R.id.contenu,réponses).addToBackStack(null);

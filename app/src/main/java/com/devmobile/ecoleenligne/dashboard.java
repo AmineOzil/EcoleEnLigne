@@ -19,7 +19,7 @@ public class dashboard extends AppCompatActivity {
     ImageView img_profile2;
     private static int selectionné =2;
     MeowBottomNavigation meo;
-    final private int exams=1;
+    final private int progression=1;
     final private int home=2;
     final private int forum=3;
     final private int profile=4;
@@ -46,7 +46,7 @@ public class dashboard extends AppCompatActivity {
 
         meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
-        meo.add(new MeowBottomNavigation.Model(exams, R.drawable.ic_exams));
+        meo.add(new MeowBottomNavigation.Model(progression, R.drawable.progression_fleche));
         meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_home));
         meo.add(new MeowBottomNavigation.Model(forum, R.drawable.ic_forum));
         meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_user));
@@ -84,6 +84,10 @@ public class dashboard extends AppCompatActivity {
                 break;
             case forum:    contenu= new ForumFragment();
                 selectionné =forum;
+                fm.setBackgroundResource(R.drawable.dashboardcours);
+                break;
+            case progression:    contenu= new ProgressionMenu();
+                selectionné =progression;
                 fm.setBackgroundResource(R.drawable.dashboardcours);
                 break;
 

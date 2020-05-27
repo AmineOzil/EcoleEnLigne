@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="@drawable/dashboardcours"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/dashboard2">
+
+            <ImageView
+                android:id="@+id/retour_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/retour"
+                android:visibility="visible"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/retour_menu"
+                android:text=" Retour"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="21sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/icone_progression"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/graph_icon"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/retour_menu"
+                android:visibility="visible"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="140dp"
+                android:layout_toRightOf="@+id/icone_progression"
+                android:text="Tableau de progression"
+                android:textColor="@color/commencer"
+                android:textSize="21sp"
+                android:id="@+id/tvEspace_Progression"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/img_profile" />
+
+        </RelativeLayout>
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="250dip"
+            android:layout_marginTop="100dp"
+            android:id="@+id/graph_progression" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
