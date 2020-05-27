@@ -29,12 +29,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import Model.Eleve;
 import Model.Eleve_parent;
 import Model.Parent;
+import Model.Progression;
 import Model.Utilisateur;
 
 public class login extends AppCompatActivity {
@@ -129,11 +133,7 @@ public class login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
                                 if (task.isSuccessful()) {
-                                    finish();
-                                    Intent intent=new Intent(login.this, dashboard.class);
-                                    intent.putExtra("USER", utilisateur);
-                                    intent.putExtra("NIVEAU", utilisateur.getId_niveau());
-                                    startActivity(intent);
+                                    updateLoginHistory(utilisateur,"Elève_Parent");
                                 }
                             }
                         });
@@ -159,11 +159,7 @@ public class login extends AppCompatActivity {
                                             progressDialog.dismiss();
                                             if (task.isSuccessful()) {
                                                 if(futilisateur.isEmailVerified()){
-                                                finish();
-                                                    Intent intent=new Intent(login.this, dashboard.class);
-                                                    intent.putExtra("USER", utilisateur);
-                                                    intent.putExtra("NIVEAU", utilisateur.getId_niveau());
-                                                    startActivity(intent);
+                                                    updateLoginHistory(utilisateur,"Elève");
                                                 }else{
                                                     Toast.makeText(login.this,"Veuillez vérifier votre émail",Toast.LENGTH_SHORT).show();
                                                     mAuth.signOut();
@@ -256,11 +252,11 @@ public class login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
                                 if (task.isSuccessful()) {
-                                    finish();
-                                    Intent intent=new Intent(login.this, dashboard.class);
+                                    updateLoginHistory(utilisateur,"Elève_Parent");
+                                    /*Intent intent=new Intent(login.this, dashboard.class);
                                     intent.putExtra("USER", utilisateur);
                                     intent.putExtra("NIVEAU", utilisateur.getId_niveau());
-                                    startActivity(intent);
+                                    startActivity(intent);*/
                                 }
                             }
                         });
@@ -286,11 +282,11 @@ public class login extends AppCompatActivity {
                                             progressDialog.dismiss();
                                             if (task.isSuccessful()) {
                                                 if(futilisateur.isEmailVerified()){
-                                                    finish();
-                                                    Intent intent=new Intent(login.this, dashboard.class);
+                                                    updateLoginHistory(utilisateur,"Elève");
+                                                    /*Intent intent=new Intent(login.this, dashboard.class);
                                                     intent.putExtra("USER", utilisateur);
                                                     intent.putExtra("NIVEAU", utilisateur.getId_niveau());
-                                                    startActivity(intent);
+                                                    startActivity(intent);*/
                                                 }else{
                                                     Toast.makeText(login.this,"Veuillez vérifier votre émail",Toast.LENGTH_SHORT).show();
                                                     mAuth.signOut();
@@ -358,6 +354,25 @@ public class login extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+    public void updateLoginHistory(final Eleve eleve, final String type){
+        Log.v("Historique de connexion",eleve.getProgression()+"");
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        eleve.getProgression().ajouterConnexion(strDate);
+        FirebaseDatabase.getInstance().getReference(type)
+                .child(String.valueOf(eleve.getId())).setValue(eleve).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                finish();
+                Intent intent=new Intent(login.this, dashboard.class);
+                intent.putExtra("USER", eleve);
+                intent.putExtra("NIVEAU", eleve.getId_niveau());
+                intent.putExtra("TYPE",type);
+                startActivity(intent);
             }
         });
     }

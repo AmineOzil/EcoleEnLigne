@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class ChapitresMatiere extends Fragment {
 
 
     RecyclerView myRecycler;
+    ScrollView mScroll;
     AdapterChapitre myAdapter;
     ArrayList<Chapitre> chapterData ;
     DatabaseReference mDatabase;
@@ -75,8 +77,9 @@ public class ChapitresMatiere extends Fragment {
         myRecycler = view.findViewById(R.id.recycler_chapitres);
         myRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecycler.setHasFixedSize(true);
-
-
+        myRecycler.bringToFront();
+        mScroll=view.findViewById(R.id.scrollingchapitres);
+        mScroll.bringToFront();
         chapterData = new ArrayList<Chapitre>();
         mDatabase = FirebaseDatabase.getInstance().getReference("Matière").child("-M6ojokYtf2FoVlFlr-H").child("chapitres");
         mDatabase.addValueEventListener(new ValueEventListener() {

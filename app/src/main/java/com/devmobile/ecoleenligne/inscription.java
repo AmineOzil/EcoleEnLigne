@@ -236,7 +236,7 @@ public class inscription extends AppCompatActivity {
                                     if (task.isSuccessful()) {
 
                                         FirebaseDatabase.getInstance().getReference("Elève")
-                                                .push().setValue(u.getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                .child(String.valueOf(u.getId())).setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 Toast.makeText(inscription.this, "Inscription effectuée", Toast.LENGTH_SHORT).show();
@@ -292,7 +292,7 @@ public class inscription extends AppCompatActivity {
                                         if (task.isSuccessful()) {
 
                                             FirebaseDatabase.getInstance().getReference("Parent")
-                                                    .push().setValue(p.getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    .child(String.valueOf(p.getId())).setValue(p).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     Toast.makeText(inscription.this, "Inscription du parent effectuée", Toast.LENGTH_SHORT).show();
@@ -326,7 +326,7 @@ public class inscription extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         FirebaseDatabase.getInstance().getReference("Elève_Parent")
-                                .push().setValue(fils.get(i).getIdentifiant()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                .child(String.valueOf(fils.get(i).getId())).setValue(fils.get(i)).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 addFils(i+1,fils,p);

@@ -31,7 +31,8 @@ public class ProfileActivity extends Fragment {
         retour= view.findViewById(R.id.retour_profile);
         nom_prénom=view.findViewById(R.id.tvProfile);
         dashboard.getUserDetails(nom_prénom);
-        email.setText(dashboard.user.getEmail());
+        if(dashboard.niveau=="Parent")  email.setText(dashboard.parent.getEmail());
+        else email.setText(dashboard.eleve.getEmail());
         niveau.setText(dashboard.niveau);
         mAuth = FirebaseAuth.getInstance();
         deconnexion.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +55,5 @@ public class ProfileActivity extends Fragment {
             }
         });
         return view;
-    }
-    public void getUserInfos(){
-
     }
 }

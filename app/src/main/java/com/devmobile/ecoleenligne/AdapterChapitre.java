@@ -38,7 +38,7 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
     @Override
     public void onBindViewHolder(@NonNull AdapterChapitre.MyViewHolder holder, final int position) {
         holder.nom.setText(chapitres.get(position).getNom());
-        holder.description.setText(chapitres.get(position).getDescription());
+        //holder.description.setText(chapitres.get(position).getDescription());
         holder.img_chapitre.setImageResource(R.drawable.chapter_img);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +62,14 @@ public class AdapterChapitre extends RecyclerView.Adapter<AdapterChapitre.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView img_chapitre;
-        TextView nom,description;
+        TextView nom;
+        //TextView description;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             this.img_chapitre = itemView.findViewById(R.id.img_chapitre);
             this.nom = itemView.findViewById(R.id.tvChapitre);
-            this.description = itemView.findViewById(R.id.tvDescription);
+            //this.description = itemView.findViewById(R.id.tvDescription);
 
         }
 

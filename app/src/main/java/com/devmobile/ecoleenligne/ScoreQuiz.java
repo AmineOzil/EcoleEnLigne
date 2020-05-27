@@ -9,12 +9,17 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.database.FirebaseDatabase;
+
+import Model.Eleve;
+
 public class ScoreQuiz extends Fragment {
     private int score;
     private TextView scoret,msgQuiz;
     private ImageView reaction;
     private ImageView retour;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        updateScoreQuiz(dashboard.eleve,dashboard.type,score);
         View view=inflater.inflate(R.layout.resultat_quiz,container,false);
         scoret=view.findViewById(R.id.score);
         scoret.setText("Score: "+score+"/5");
@@ -36,5 +41,10 @@ public class ScoreQuiz extends Fragment {
     }
     public void setScore(int score){
         this.score=score;
+    }
+    public void updateScoreQuiz(final Eleve eleve, String type, int score){
+        eleve.getProgression().ajouterScore(score);
+        FirebaseDatabase.getInstance().getReference(type)
+                .child(String.valueOf(eleve.getId())).setValue(eleve);
     }
 }
