@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,6 +73,7 @@ public class Forum_réponses extends Fragment {
         enonce_qst = (TextView)view.findViewById(R.id.tvQst_enonce);
         img_qst = (ImageView)view.findViewById(R.id.img_qst);
         retour_forum = (ImageView)view.findViewById(R.id.retour_forum);
+
 
         //Récupération de l'énoncé de la question
         enonce_qst.setText(enonce);

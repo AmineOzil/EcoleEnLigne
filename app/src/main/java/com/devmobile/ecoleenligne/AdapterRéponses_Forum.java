@@ -30,7 +30,7 @@ public class AdapterRéponses_Forum extends RecyclerView.Adapter<AdapterRéponse
     @NonNull
     @Override
     public AdapterRéponses_Forum.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AdapterRéponses_Forum.MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false));
+        return new AdapterRéponses_Forum.MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.bubbles_item,parent,false));
 
     }
 

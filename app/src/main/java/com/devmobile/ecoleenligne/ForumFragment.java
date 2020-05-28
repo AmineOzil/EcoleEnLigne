@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,8 +45,10 @@ public class ForumFragment extends Fragment {
         TextView tvEspace_forum;
         ImageView icone_forum,img_profile;
         FloatingActionButton add_qst;
+        ScrollView scrollView;
 
-@Override
+
+    @Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.forum,container,false);
     ((dashboard)getActivity()).selectedFromRetour(3);
@@ -53,6 +56,9 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
         img_profile = view.findViewById(R.id.img_profile);
         icone_forum = view.findViewById(R.id.icone_forum);
         add_qst = view.findViewById(R.id.add_qst);
+        scrollView = (ScrollView)view.findViewById(R.id.scrollViewQuestions);
+
+        //add_qst.attach
 
 
         img_profile.setOnClickListener(new View.OnClickListener() {

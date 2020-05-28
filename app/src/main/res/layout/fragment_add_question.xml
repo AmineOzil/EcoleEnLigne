@@ -7,17 +7,22 @@
     app:cardElevation="18dp"
     >
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_margin="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_title"
+            android:src="@drawable/title"
+            />
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/edTitreQuestion"
-            android:hint="Veuillez renseigner le titre de votre question.."
+            android:hint="Titre de votre question.."
             android:inputType="text"
             android:textColor="@color/commencer"
             android:textColorHint="@color/profile_info"
@@ -26,13 +31,22 @@
             app:met_singleLineEllipsis="true"
             app:met_baseColor="@color/commencer"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/login">
+            app:met_primaryColor="@color/login"
+            android:layout_toRightOf="@+id/img_title"
+            android:layout_marginLeft="10dp">
         </com.rengwuxian.materialedittext.MaterialEditText>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_des_qst"
+            android:src="@drawable/qst_mark"
+            android:layout_below="@+id/img_title"
+            />
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/edContenuQuestion"
-            android:hint="Ecrivez votre question içi.."
+            android:hint="Enoncé de votre question.."
             android:inputType="text"
             android:textColor="@color/commencer"
             android:textColorHint="@color/profile_info"
@@ -41,11 +55,14 @@
             app:met_singleLineEllipsis="true"
             app:met_baseColor="@color/commencer"
             app:met_floatingLabel="highlight"
-            app:met_primaryColor="@color/login">
+            app:met_primaryColor="@color/login"
+            android:layout_below="@+id/edTitreQuestion"
+            android:layout_toRightOf="@+id/img_des_qst"
+            android:layout_marginLeft="10dp">
         </com.rengwuxian.materialedittext.MaterialEditText>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/add_qst"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -25,11 +24,11 @@
             android:id="@+id/dashboard2">
 
             <ImageView
-                android:id="@+id/icone_forum"
+                android:id="@+id/retour_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icone_forum"
+                android:src="@drawable/retour"
                 android:visibility="visible"></ImageView>
 
             <TextView
@@ -37,12 +36,34 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="50dp"
-                android:layout_toRightOf="@+id/icone_forum"
-                android:text="Espace Forum"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/retour_menu"
+                android:text=" Retour"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="21sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/icone_progression"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/graph_icon"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/retour_menu"
+                android:visibility="visible"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="140dp"
+                android:layout_toRightOf="@+id/icone_progression"
+                android:text="Courbe de progression"
                 android:textColor="@color/commencer"
                 android:textSize="21sp"
-                android:id="@+id/tvEspace_Forum"
+                android:id="@+id/tvEspace_Progression"
                 android:textStyle="bold" />
 
             <ImageView
@@ -54,43 +75,13 @@
 
         </RelativeLayout>
 
-        <ScrollView
+        <com.jjoe64.graphview.GraphView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:id="@+id/scrollViewQuestions"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:id="@+id/recycler_questions_forum"
-                >
-
-
-
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-
-        </ScrollView>
-
-
+            android:layout_height="250dip"
+            android:layout_marginTop="100dp"
+            android:id="@+id/graph_progression" />
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_qst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        app:backgroundTint="#03A5FE"
-        android:src="@drawable/croix"
-        />
 
 
 

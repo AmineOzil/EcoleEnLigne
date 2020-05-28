@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/retour"
+                android:layout_marginTop="10dp"
                 android:visibility="visible"></ImageView>
 
             <TextView
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/retour_matieres"
                 android:text="Mes matières"
                 android:textColor="@color/colorPrimaryDark"
@@ -71,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:id="@+id/recycler_chapitres"
+                android:layout_marginTop="20dp"
                 >
             </androidx.recyclerview.widget.RecyclerView>
 

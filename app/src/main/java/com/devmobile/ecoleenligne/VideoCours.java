@@ -31,7 +31,7 @@ public class VideoCours extends Fragment  {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.video_cours, container, false);
+        View view = inflater.inflate(R.layout.fragment_video_cours, container, false);
         ((dashboard)getActivity()).selectedFromRetour(2);
         final YouTubePlayer[] player = new YouTubePlayer[1];
         //YouTubePlayerSupportFragment youTubePlayerFragment = (YouTubePlayerSupportFragment) getActivity().getSupportFragmentManager()

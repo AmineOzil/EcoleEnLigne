@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#47A810</color>
     <color name="colorPrimaryDark">#EC008C</color>
     <color name="colorAccent">#D81B60</color>
     <color name="login">#FFF8E1</color>
@@ -10,6 +10,8 @@
     <color name="question">#FCF3F3</color>
     <color name="profile_info">#BFC0C0</color>
     <color name="bg_bubble">#FFDCDC</color>
+    <color name="chapter">#C2BEFF</color>
+
 
 
 

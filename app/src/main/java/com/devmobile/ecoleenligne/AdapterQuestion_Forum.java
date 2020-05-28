@@ -40,7 +40,7 @@ public class AdapterQuestion_Forum extends RecyclerView.Adapter<AdapterQuestion_
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.qst_titre.setText(questions_forums.get(position).getTitre());
         holder.qst_user.setText(questions_forums.get(position).getQuestionUser());
-        holder.icone_qst.setImageResource(R.drawable.ask_qst);
+        holder.icone_qst.setImageResource(R.drawable.qst_ic);
         if(questions_forums.get(position).getQuestionTime()==0) questions_forums.get(position).setQuestionTime(questions_forums.get(position).getRéponses().get(0).getRéponseTime());
         holder.qst_time.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", questions_forums.get(position).getQuestionTime()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {

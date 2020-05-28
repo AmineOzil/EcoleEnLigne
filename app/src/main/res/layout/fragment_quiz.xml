@@ -22,15 +22,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/retour"
-            android:visibility="visible"></ImageView>
+            android:visibility="visible"
+            android:layout_marginTop="10dp"></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/retour_matieres1"
-            android:text="Mes matières"
+            android:text="Menu chapitre"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="21sp"
             android:id="@+id/Retour_matieres1"
@@ -48,7 +49,6 @@
         android:layout_below="@+id/retourquiz"
         android:orientation="vertical"
         android:background="#FFFBFB"
-        android:gravity="center"
         android:id="@+id/questionchoix">
 
         <TextView
@@ -59,12 +59,13 @@
             android:textAllCaps="false"
             android:text="@string/question"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="80dp"
             android:drawablePadding="10dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
+            android:textSize="20dp"
             ></TextView>
 
         <TextView
@@ -84,6 +85,7 @@
             android:paddingLeft="20dp"
             android:drawableStart="@drawable/choix1"
             android:background="@drawable/round_edit_text"
+            android:textSize="16dp"
             ></TextView>
         <TextView
             android:gravity="center"
@@ -102,6 +104,7 @@
             android:paddingLeft="20dp"
             android:drawableStart="@drawable/choix2"
             android:background="@drawable/round_edit_text"
+            android:textSize="16dp"
             ></TextView><TextView
         android:gravity="center"
         android:id="@+id/choix3"
@@ -119,6 +122,7 @@
         android:paddingLeft="20dp"
         android:drawableStart="@drawable/choix3"
         android:background="@drawable/round_edit_text"
+        android:textSize="16dp"
         ></TextView>
         <TextView
             android:gravity="center"
@@ -137,6 +141,7 @@
             android:paddingLeft="20dp"
             android:drawableStart="@drawable/choix4"
             android:background="@drawable/round_edit_text"
+            android:textSize="16dp"
             ></TextView>
     </LinearLayout>
 </RelativeLayout>

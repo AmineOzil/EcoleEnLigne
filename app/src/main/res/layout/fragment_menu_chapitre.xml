@@ -31,14 +31,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/retour"
-                android:visibility="visible"></ImageView>
+                android:visibility="visible"
+                android:layout_marginTop="10dp"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/retour_chapitre"
                 android:text="Tous les chapitres"
                 android:textColor="@color/colorPrimaryDark"
@@ -50,7 +51,8 @@
                 android:layout_width="62dp"
                 android:layout_height="62dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/img_profile" />
+                android:src="@drawable/img_profile"
+                />
 
         </RelativeLayout>
 
