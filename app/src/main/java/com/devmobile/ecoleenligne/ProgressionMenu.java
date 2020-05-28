@@ -42,7 +42,7 @@ public class ProgressionMenu extends Fragment {
             public void onClick(View v) {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
-                ProgressionConnexion connexion =new ProgressionConnexion();
+                ProgressionQuiz connexion =new ProgressionQuiz();
                 if(dashboard.niveau.matches("Parent"))
                 connexion.setProgression(progression);
                 ft.replace(R.id.contenu,connexion).addToBackStack(null);
@@ -66,19 +66,19 @@ public class ProgressionMenu extends Fragment {
                 ft.commit();
             }
         });
- /*       quiz_scores.setOnClickListener(new View.OnClickListener() {
+        nbr_conex_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
-                QuizView chapter =new QuizView();
-                chapter.setQuiz(chapitre.getQuiz());
-                ft.replace(R.id.contenu,chapter).addToBackStack(null);
+                ProgressionConnexion connexion =new ProgressionConnexion();
+                connexion.setProgression(connexion.getProgression());
+                ft.replace(R.id.contenu,connexion).addToBackStack(null);
                 ft.commit();
             }
         });
 
-     */
+
 
 
         return view;

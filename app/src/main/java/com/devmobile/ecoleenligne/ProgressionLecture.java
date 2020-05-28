@@ -28,7 +28,7 @@ public class ProgressionLecture extends Fragment {
         img_profile = view.findViewById(R.id.img_profile);
         retour_menu = view.findViewById(R.id.retour_menu);
 
-        icone_progression = view.findViewById(R.id.icone_forum);
+
 
         retour_menu.setOnClickListener(new View.OnClickListener() {
             @Override
