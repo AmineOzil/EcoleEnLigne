@@ -37,7 +37,7 @@ public class ProgressionMenu extends Fragment {
         nbr_conex_=view.findViewById(R.id.nbr_conex);
         quiz_scores=view.findViewById(R.id.quiz_scores);
 
-        nbr_conex_.setOnClickListener(new View.OnClickListener() {
+        quiz_scores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm=getFragmentManager();
@@ -55,18 +55,18 @@ public class ProgressionMenu extends Fragment {
                 getFragmentManager().popBackStackImmediate();
             }
         });
- /*       cours_lus.setOnClickListener(new View.OnClickListener() {
+       cours_lus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
-                PdfView chapter =new PdfView();
-                chapter.setUrl(chapitre.getContenu());
-                ft.replace(R.id.contenu,chapter).addToBackStack(null);
+                ProgressionLecture lecture =new ProgressionLecture();
+                lecture.setProgression(lecture.getProgression());
+                ft.replace(R.id.contenu,lecture).addToBackStack(null);
                 ft.commit();
             }
         });
-        quiz_scores.setOnClickListener(new View.OnClickListener() {
+ /*       quiz_scores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm=getFragmentManager();

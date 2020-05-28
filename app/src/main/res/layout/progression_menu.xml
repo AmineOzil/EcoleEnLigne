@@ -133,7 +133,7 @@
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
                     app:cardBackgroundColor="#FCF3F3"
-                    android:id="@+id/nbr_conex"
+                    android:id="@+id/quiz_scores"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
                     app:cardBackgroundColor="#FCF3F3"
-                    android:id="@+id/quiz_scores"
+                    android:id="@+id/nbr_conex"
                     >
 
                     <LinearLayout

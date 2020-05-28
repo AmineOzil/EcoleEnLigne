@@ -23,7 +23,7 @@ import Model.Progression;
 public class ProgressionConnexion extends Fragment {
 
 
-    TextView tvEspace_forum;
+    TextView tvEspace_progression;
     ImageView icone_progression,img_profile, retour_menu;
     Progression progression;
 
@@ -34,7 +34,7 @@ public class ProgressionConnexion extends Fragment {
         else ((dashboard)getActivity()).selectedFromRetour(1);
         if(dashboard.type!="Parent")
         progression=dashboard.eleve.getProgression();
-        tvEspace_forum = view.findViewById(R.id.tvEspace_Progression);
+        tvEspace_progression = view.findViewById(R.id.tvEspace_Progression);
         img_profile = view.findViewById(R.id.img_profile);
         retour_menu = view.findViewById(R.id.retour_menu);
 
