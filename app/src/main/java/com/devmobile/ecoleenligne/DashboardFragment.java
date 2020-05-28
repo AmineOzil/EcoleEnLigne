@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import Model.Eleve_parent;
+import Model.Progression;
 
 public class DashboardFragment extends Fragment {
     CardView maths;
@@ -72,6 +73,50 @@ public class DashboardFragment extends Fragment {
                 listfilst.get(i).setText(e.getPrénom());
                 i++;
             }
+            fils1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fm=getFragmentManager();
+                    FragmentTransaction ft=fm.beginTransaction();
+                    ProgressionMenu progressionMenu =new ProgressionMenu();
+                    progressionMenu.setProgression(dashboard.listefils.get(0).getProgression());
+                    ft.replace(R.id.contenu,progressionMenu).addToBackStack(null);
+                    ft.commit();
+                }
+            });
+            fils2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fm=getFragmentManager();
+                    FragmentTransaction ft=fm.beginTransaction();
+                    ProgressionMenu progressionMenu =new ProgressionMenu();
+                    progressionMenu.setProgression(dashboard.listefils.get(1).getProgression());
+                    ft.replace(R.id.contenu,progressionMenu).addToBackStack(null);
+                    ft.commit();
+                }
+            });
+            fils3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fm=getFragmentManager();
+                    FragmentTransaction ft=fm.beginTransaction();
+                    ProgressionMenu progressionMenu =new ProgressionMenu();
+                    progressionMenu.setProgression(dashboard.listefils.get(2).getProgression());
+                    ft.replace(R.id.contenu,progressionMenu).addToBackStack(null);
+                    ft.commit();
+                }
+            });
+            fils4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fm=getFragmentManager();
+                    FragmentTransaction ft=fm.beginTransaction();
+                    ProgressionMenu progressionMenu =new ProgressionMenu();
+                    progressionMenu.setProgression(dashboard.listefils.get(3).getProgression());
+                    ft.replace(R.id.contenu,progressionMenu).addToBackStack(null);
+                    ft.commit();
+                }
+            });
         }
         return view;
     }

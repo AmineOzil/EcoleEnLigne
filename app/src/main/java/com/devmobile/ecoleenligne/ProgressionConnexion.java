@@ -20,24 +20,25 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.util.ArrayList;
+
+import Model.Progression;
 import Model.Questions_Forum;
 
 public class ProgressionConnexion extends Fragment {
 
-    RecyclerView myRecycler;
-    AdapterQuestion_Forum myAdapter;
-    DatabaseReference mDatabase;
-    FirebaseRecyclerOptions<Questions_Forum> options ;
+
     TextView tvEspace_forum;
     ImageView icone_progression,img_profile, retour_menu;
-    FloatingActionButton add_qst;
-    ProgressionConnexion connexion;
+    Progression progression;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_progression,container,false);
-        ((dashboard)getActivity()).selectedFromRetour(1);
-
+        if(dashboard.niveau.matches("Parent")) ((dashboard)getActivity()).selectedFromRetour(2);
+        else ((dashboard)getActivity()).selectedFromRetour(1);
+        if(dashboard.type!="Parent")
+        progression=dashboard.eleve.getProgression();
         tvEspace_forum = view.findViewById(R.id.tvEspace_Progression);
         img_profile = view.findViewById(R.id.img_profile);
         retour_menu = view.findViewById(R.id.retour_menu);
@@ -63,22 +64,29 @@ public class ProgressionConnexion extends Fragment {
         });
 
         GraphView graph = (GraphView) view.findViewById(R.id.graph_progression);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
+        ArrayList<DataPoint> result_quiz=new ArrayList<>();
+        result_quiz.add(new DataPoint(0,0));
+        int i=1;
+        for(int j:progression.getQuizScores()){
+            result_quiz.add(new DataPoint(i,j));
+            i++;
+        }
+        DataPoint[] datas=new DataPoint[result_quiz.size()];
+        datas=result_quiz.toArray(datas);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(datas);
 
         graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
             @Override
             public String formatLabel(double value, boolean isValueX) {
                 if (isValueX) {
-                    return "chap " + super.formatLabel(value, isValueX);
+                    if(value!=0)
+                    return  super.formatLabel(value, isValueX);
+                    else return "essai";
 
                 } else {
-                    return super.formatLabel(value, isValueX);
+                    if(value!=0)
+                        return  super.formatLabel(value, isValueX);
+                    else return "score";
                 }
             }
         });
@@ -99,12 +107,10 @@ public class ProgressionConnexion extends Fragment {
         return view;
     }
 
-    public void setProgressionConnexion(ProgressionConnexion c){
-        this.connexion=c;
+    public void setProgression(Progression c){
+        this.progression=c;
     }
-    public ProgressionConnexion getProgressionConnexion(){
-        return connexion;
-    }
+
 }
 
 

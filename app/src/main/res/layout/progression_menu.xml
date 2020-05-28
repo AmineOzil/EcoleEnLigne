@@ -23,7 +23,27 @@
             android:layout_marginTop="32dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
+            <ImageView
+                android:id="@+id/retour_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/retour"
+                android:visibility="invisible"></ImageView>
 
+            <TextView
+                android:id="@+id/retourtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/retour_menu"
+                android:text=" Retour"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="21sp"
+                android:textStyle="normal"
+                android:visibility="invisible"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,7 +135,6 @@
                     app:cardBackgroundColor="#FCF3F3"
                     android:id="@+id/nbr_conex"
                     >
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -126,21 +145,21 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/using_app"
-                            android:layout_marginRight="20dp"
+                            android:src="@drawable/quiz_scores"
                             android:layout_marginLeft="10dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
+                            android:layout_marginLeft="50dp"
                             android:layout_gravity="center"
-                            android:text="Nombre de connexions"
+                            android:text="Scores des Quiz"
                             android:textColor="@color/commencer"
                             android:textSize="18sp"
                             android:textAppearance="@font/calibri_bold"/>
 
                     </LinearLayout>
+
 
 
                 </androidx.cardview.widget.CardView>
@@ -169,22 +188,21 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/quiz_scores"
+                            android:src="@drawable/using_app"
+                            android:layout_marginRight="20dp"
                             android:layout_marginLeft="10dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
+                            android:layout_marginLeft="30dp"
                             android:layout_gravity="center"
-                            android:text="Scores des Quiz"
+                            android:text="Nombre de connexions"
                             android:textColor="@color/commencer"
                             android:textSize="18sp"
                             android:textAppearance="@font/calibri_bold"/>
 
                     </LinearLayout>
-
-
                 </androidx.cardview.widget.CardView>
 
 

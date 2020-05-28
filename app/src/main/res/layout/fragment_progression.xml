@@ -60,7 +60,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="140dp"
                 android:layout_toRightOf="@+id/icone_progression"
-                android:text="Tableau de progression"
+                android:text="Courbe de progression"
                 android:textColor="@color/commencer"
                 android:textSize="21sp"
                 android:id="@+id/tvEspace_Progression"

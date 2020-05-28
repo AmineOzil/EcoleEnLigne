@@ -169,7 +169,7 @@ public class dashboard extends AppCompatActivity {
 
                 meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 
-                meo.add(new MeowBottomNavigation.Model(progression, R.drawable.progression_fleche));
+               // meo.add(new MeowBottomNavigation.Model(progression, R.drawable.progression_fleche));
                 meo.add(new MeowBottomNavigation.Model(home, R.drawable.ic_home));
                 meo.add(new MeowBottomNavigation.Model(forum, R.drawable.ic_forum));
                 meo.add(new MeowBottomNavigation.Model(profile, R.drawable.ic_user));
