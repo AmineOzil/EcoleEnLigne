@@ -1,5 +1,8 @@
 package com.devmobile.ecoleenligne;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,17 +10,20 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -132,43 +138,7 @@ public class Forum_réponses extends Fragment {
         return view;
      }
 
-    /*
-    private void displayQuestion() {
 
-        adapter = new FirebaseRecyclerAdapter<Questions_Forum, QuestionViewHolder>(options) {
-            @Override
-            protected void onBindViewHolder(@NonNull QuestionViewHolder holder, int position, @NonNull Questions_Forum model) {
-                holder.questionText.setText(model.getContenu());
-                holder.questionUser.setText(model.getQuestionUser());
-                holder.questionTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getQuestionTime()));
-            }
-
-            @NonNull
-            @Override
-            public QuestionViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                //return new QuestionViewHolder(LayoutInflater.from(getActivity())
-                        //.inflate(R.layout.list_item,viewGroup,false));
-                return new QuestionViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item,viewGroup,false));
-
-            }
-        };
-
-
-        listOfQuestion.setAdapter(adapter);
-    }
-
-    private class QuestionViewHolder extends RecyclerView.ViewHolder {
-        TextView questionText, questionUser, questionTime;
-
-        public QuestionViewHolder(@NonNull View itemView) {
-            super(itemView);
-            questionText = (BubbleTextView) itemView.findViewById(R.id.question_text);
-            questionUser = (TextView) itemView.findViewById(R.id.question_user);
-            questionTime = (TextView) itemView.findViewById(R.id.question_time);
-        }
-    }
-
-     */
     public void setRep_user(String rep_user){
         this.rep_user=rep_user;
     }
@@ -204,8 +174,77 @@ public class Forum_réponses extends Fragment {
             }
         });
 
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                String qstt = rep.getContenu();
+                if(qstt.isEmpty()){
+                    Toast.makeText(getActivity(),"Veuillez saisir votre réponse svp",Toast.LENGTH_SHORT).show();
+                }else{
+                    notification(qstt);
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
     }
+
+    private void notification(String qst){
+
+        String qsttt = qst;
+
+        //String message = "Merci pour votre contribution :) ";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            NotificationChannel channel =
+
+                    new NotificationChannel("n","n", NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getActivity().getSystemService(NotificationManager.class);
+
+            manager.createNotificationChannel(channel);
+
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"n")
+
+                .setContentText("Code Sphere")
+
+                .setSmallIcon(R.drawable.send_qst)
+
+                .setAutoCancel(true)
+
+                .setContentText("Nouvelle réponse a été ajoutée dans le forum : "+  qsttt );
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getActivity());
+
+        managerCompat.notify(999,builder.build());
+
+    }
+
+
+
     public void setContenu(String enonce){
         this.enonce=enonce;
     }
