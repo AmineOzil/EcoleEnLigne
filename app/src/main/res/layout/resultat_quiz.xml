@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:id="@+id/retourscore">
@@ -20,15 +20,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/retour"
+            android:layout_marginTop="10dp"
             android:visibility="visible"></ImageView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/retour_score1"
-            android:text="Chapitre 1"
+            android:text="Menu chapitre"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="21sp"
             android:id="@+id/Retour_score1"
