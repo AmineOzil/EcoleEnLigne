@@ -5,35 +5,58 @@
     android:layout_height="match_parent"
     android:background="#FFFBFB"
     >
-    <ImageView
-        android:layout_margin="20dp"
-        android:id="@+id/retour_video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/retour"
-        android:visibility="visible"
-        ></ImageView>
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/retour_video"
-        android:text="Menu chapitre"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="21sp"
-        android:id="@+id/Retour_matieres1"
-        android:textStyle="normal" />
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="30dp"
+        android:gravity="top"
+        android:id="@+id/TopBar"
+        >
+
+        <ImageView
+            android:id="@+id/retour_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/retour"
+            android:visibility="visible"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/retour_video"
+            android:text=" Retour"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="21sp"
+            android:textStyle="normal"
+            android:id="@+id/Retour_matieres1"/>
+
+
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/img_profile" />
+
+    </RelativeLayout>
+
+
 
     <FrameLayout
         android:id="@+id/youtube_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginEnd="96dp"
-        android:layout_below="@+id/Retour_matieres1"
-        android:layout_marginBottom="335dp"
+        android:layout_below="@+id/TopBar"
+        android:layout_marginBottom="235dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="120dp"/>
 

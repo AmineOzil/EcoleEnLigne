@@ -1,9 +1,13 @@
 package com.devmobile.ecoleenligne;
 
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -22,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -94,6 +102,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
             for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                 Questions_Forum qst = dataSnapshot1.getValue(Questions_Forum.class);
                     qsts.add(qst);
+
                 }
             setquestionsData(qsts);
                 myAdapter = new AdapterQuestion_Forum(getActivity(), questionsData);
@@ -125,6 +134,40 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
 
             }
         });
+
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                String qstt = q.getTitre();
+                Log.d("HAAAANIIII :", "This is my question  "+q);
+                if(qstt.isEmpty()){
+                    Toast.makeText(getActivity(),"Veuillez saisir votre réponse svp",Toast.LENGTH_SHORT).show();
+                }else{
+                    notification(qstt);
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     public void showDialog() {
@@ -171,5 +214,41 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
     public void setquestionsData(ArrayList<Questions_Forum> questions){
         questionsData = questions;
     }
+
+    private void notification(String qst){
+
+        String qsttt = qst;
+
+        //String message = "Merci pour votre contribution :) ";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            NotificationChannel channel =
+
+                    new NotificationChannel("n","n", NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getActivity().getSystemService(NotificationManager.class);
+
+            manager.createNotificationChannel(channel);
+
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"n")
+
+                .setContentText("Code Sphere")
+
+                .setSmallIcon(R.drawable.qst_ic)
+
+                .setAutoCancel(true)
+
+                .setContentText("Nouvelle question ajoutée : "+  qsttt );
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getActivity());
+
+        managerCompat.notify(999,builder.build());
+
+    }
+
+
 
 }
