@@ -60,7 +60,8 @@ public class ProgressionMenu extends Fragment {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 ProgressionLecture lecture =new ProgressionLecture();
-                lecture.setProgression(progression);
+                if(dashboard.niveau.matches("Parent"))
+                    lecture.setProgression(progression);
                 ft.replace(R.id.contenu,lecture).addToBackStack(null);
                 ft.commit();
             }
@@ -71,7 +72,8 @@ public class ProgressionMenu extends Fragment {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 ProgressionConnexion connexion =new ProgressionConnexion();
-                connexion.setProgression(connexion.getProgression());
+                if(dashboard.niveau.matches("Parent"))
+                    connexion.setProgression(progression);
                 ft.replace(R.id.contenu,connexion).addToBackStack(null);
                 ft.commit();
             }
