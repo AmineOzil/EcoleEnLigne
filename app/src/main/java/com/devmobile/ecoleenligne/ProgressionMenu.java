@@ -36,7 +36,6 @@ public class ProgressionMenu extends Fragment {
         cours_lus=view.findViewById(R.id.cours_lus);
         nbr_conex_=view.findViewById(R.id.nbr_conex);
         quiz_scores=view.findViewById(R.id.quiz_scores);
-
         quiz_scores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +60,7 @@ public class ProgressionMenu extends Fragment {
                 FragmentManager fm=getFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 ProgressionLecture lecture =new ProgressionLecture();
-                lecture.setProgression(lecture.getProgression());
+                lecture.setProgression(progression);
                 ft.replace(R.id.contenu,lecture).addToBackStack(null);
                 ft.commit();
             }

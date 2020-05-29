@@ -157,7 +157,9 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="-12dp"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -172,22 +174,22 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/nbr_matières"
                             android:fontFamily="@font/calibri_regular"
-                            android:text="5"
+                            android:text="1"
                             android:textColor="@color/login"
                             android:textSize="50dp"
                             android:layout_marginLeft="50dp"
                             android:layout_marginTop="30dp"/>
+
                         <TextView
+                            android:id="@+id/matière_lu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/matière_lu"
-                            android:fontFamily="@font/calibri_regular"
-                            android:text="Matières consultées"
-                            android:textColor="@color/login"
-                            android:textSize="30dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="30dp"
-                            />
+                            android:fontFamily="@font/calibri_regular"
+                            android:text="Matière consultée"
+                            android:textColor="@color/login"
+                            android:textSize="30dp" />
 
                     </LinearLayout>
 
