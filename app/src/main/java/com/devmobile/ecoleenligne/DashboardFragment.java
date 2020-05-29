@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import Model.Eleve_parent;
-import Model.Progression;
 
 public class DashboardFragment extends Fragment {
     CardView maths;
@@ -118,6 +117,7 @@ public class DashboardFragment extends Fragment {
                 }
             });
         }
+
         return view;
     }
 

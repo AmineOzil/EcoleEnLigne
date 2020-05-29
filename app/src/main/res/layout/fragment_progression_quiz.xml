@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="0dp"
-    android:background="@drawable/dashboardcours"
+    android:background="@drawable/progression_chapitres1"
     >
 
     <LinearLayout
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/graph_icon"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="65dp"
                 android:layout_below="@+id/retour_menu"
                 android:visibility="visible"></ImageView>
 
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="160dp"
                 android:layout_toRightOf="@+id/icone_progression"
                 android:text="Courbe de progression"
                 android:textColor="@color/commencer"
@@ -86,3 +86,4 @@
 
 
 </RelativeLayout>
+

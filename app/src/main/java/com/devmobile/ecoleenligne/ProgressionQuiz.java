@@ -29,7 +29,7 @@ public class ProgressionQuiz extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_progression,container,false);
+        View view=inflater.inflate(R.layout.fragment_progression_quiz,container,false);
         if(dashboard.niveau.matches("Parent")) ((dashboard)getActivity()).selectedFromRetour(2);
         else ((dashboard)getActivity()).selectedFromRetour(1);
         if(dashboard.type!="Parent")

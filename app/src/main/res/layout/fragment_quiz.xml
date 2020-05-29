@@ -31,7 +31,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/retour_matieres1"
-            android:text="Menu chapitre"
+            android:text="Retour"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="21sp"
             android:id="@+id/Retour_matieres1"

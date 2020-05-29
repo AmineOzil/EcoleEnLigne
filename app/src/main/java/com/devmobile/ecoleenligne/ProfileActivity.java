@@ -10,12 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends Fragment {
     Button deconnexion;
-    ImageView retour;
+    ImageView retour, img_forum;
     FirebaseAuth mAuth;
     TextView nom_prénom;
     TextView email,niveau;
@@ -28,6 +30,7 @@ public class ProfileActivity extends Fragment {
         email=view.findViewById(R.id.tvEmail);
         niveau=view.findViewById(R.id.tvNiveau);
         retour= view.findViewById(R.id.retour_profile);
+        img_forum=view.findViewById(R.id.img_forum);
         nom_prénom=view.findViewById(R.id.tvProfile);
         dashboard.getUserDetails(nom_prénom);
         if(dashboard.niveau=="Parent")  email.setText(dashboard.parent.getEmail());
@@ -50,6 +53,17 @@ public class ProfileActivity extends Fragment {
 
             }
         });
+        img_forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment forum =new ForumFragment();
+                ft.replace(R.id.contenu,forum).addToBackStack(null);
+                ft.commit();
+            }
+        });
+
         return view;
     }
 }

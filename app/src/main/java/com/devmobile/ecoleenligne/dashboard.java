@@ -157,15 +157,8 @@ public class dashboard extends AppCompatActivity {
             }
                 setContentView(R.layout.activity_dashboard);
                 fm=findViewById(R.id.dashboard);
-      /*  img_profile= findViewById(R.id.img_profile);
-        img_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent profile = new Intent(dashboard.this,ProfileActivity.class);
-                startActivity(profile);
-            }
-        })*/
-                //J'ai ajouté cette partie pour assurer la synchronisation entre l'ajout des fils et l'affichage du dashboard
+
+        // Nous avons ajouté cette partie pour assurer la synchronisation entre l'ajout des fils et l'affichage du dashboard
 
                 meo= (MeowBottomNavigation) findViewById(R.id.bottom_nav);
 

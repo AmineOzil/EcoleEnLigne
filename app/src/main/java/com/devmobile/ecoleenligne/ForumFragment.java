@@ -76,6 +76,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
             FragmentTransaction ft=fm.beginTransaction();
             Fragment profile =new ProfileActivity();
             ft.replace(R.id.contenu,profile);
+            ft.replace(R.id.contenu,profile).addToBackStack(null);
             ft.commit();
             }
             });

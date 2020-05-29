@@ -85,7 +85,7 @@
 
     <Button
         android:id="@+id/bt_inscription"
-        android:layout_width="200dp"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="@drawable/identificationbutton"
@@ -100,7 +100,7 @@
 
     <Button
         android:id="@+id/bt_login"
-        android:layout_width="200dp"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="@drawable/commencerbutton"

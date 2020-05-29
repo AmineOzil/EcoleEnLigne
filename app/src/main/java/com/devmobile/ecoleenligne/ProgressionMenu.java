@@ -19,7 +19,7 @@ public class ProgressionMenu extends Fragment {
     private CardView cours_lus;
     private CardView nbr_conex_;
     private CardView quiz_scores;
-    private ImageView retour_accueil;
+    private ImageView img_profile;
     public Progression progression;
     private TextView retourtxt;
     private ImageView retour;
@@ -35,6 +35,7 @@ public class ProgressionMenu extends Fragment {
         else ((dashboard)getActivity()).selectedFromRetour(1);
         cours_lus=view.findViewById(R.id.cours_lus);
         nbr_conex_=view.findViewById(R.id.nbr_conex);
+        img_profile=view.findViewById(R.id.img_profile);
         quiz_scores=view.findViewById(R.id.quiz_scores);
         quiz_scores.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +76,17 @@ public class ProgressionMenu extends Fragment {
                 if(dashboard.niveau.matches("Parent"))
                     connexion.setProgression(progression);
                 ft.replace(R.id.contenu,connexion).addToBackStack(null);
+                ft.commit();
+            }
+        });
+
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm=getFragmentManager();
+                FragmentTransaction ft=fm.beginTransaction();
+                Fragment profile =new ProfileActivity();
+                ft.replace(R.id.contenu,profile).addToBackStack(null);
                 ft.commit();
             }
         });
